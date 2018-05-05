@@ -134,6 +134,112 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-以太坊" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/05/以太坊/">以太坊</a>
+    </h1>
+  
+
+        
+        <a href="/2018/05/05/以太坊/" class="archive-article-date">
+  	<time datetime="2018-05-05T15:54:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>以太坊是智能合约的完整解决方案，被设计成了一个通用的区中心化平台，拥有一套完整的、可扩展其功能的工具。</p>
+<p><img src="https://images2015.cnblogs.com/blog/810542/201705/810542-20170509211714863-1437264347.jpg" alt="img"></p>
+<h5 id="以太坊的核心概念："><a href="#以太坊的核心概念：" class="headerlink" title="以太坊的核心概念："></a>以太坊的核心概念：</h5><ul>
+<li><p>以太坊虚拟机（EVM）：</p>
+<p>智能合约的运行环境。</p>
+</li>
+<li><p>账户：</p>
+<p>以太坊有两类账户，它们共用一个地址空间。以太坊的账户包含四部分，随机数，用于确定每笔交易只能被处理一次；账户目前的以太币余额；账户的合约代码；账户的存储（默认为空）。</p>
+<p>在必特币上，由于只有UTXO而没有账户的概念，需要导入区块链数据库，解析所有交易，抽取出某个用户的交易情况。而以太坊可以在实时的区块链上，根据一个地址实时查看当前账户情况和交易状态。</p>
+<ul>
+<li>外部账户：被私钥-公钥对控制，地址由公钥得到，可进行普通交易。</li>
+<li>合约账户：被存储在账户中的代码控制，地址由合约创建者的地址和该地址发出过的交易数量计算得到，每当合约账户收到一条消息，合约内部的代码就会被激活，允许它对内部存储进行读取、写入、发送其他消息和创建合约。</li>
+</ul>
+</li>
+<li><p>消息：</p>
+<p>类似于比特币的交易，不同点有：可以由合约创建账户；可以包含数据；若接收方为合约账户，可以对消息进行回应。</p>
+</li>
+<li><p>交易：</p>
+<p>指从外部账户发出的消息的签名数据包。包含接收者、签名、帐户余额、要发送的数据、STAETGAS（对计算步骤做限制）、GASPRICE（每一计算步骤需要支付矿工的燃料的价格）。</p>
+</li>
+<li><p>存储、主存、栈：</p>
+<p>存储：每个账户都有一块永久的内存区域，称为存储。</p>
+<p>主存：合约执行每次消息调用时都有一块新的被清除过的主存。</p>
+<p>栈：EVM是基于栈的，即所有计算都在一个栈的区域内执行。</p>
+</li>
+<li><p>指令集：</p>
+<p>具备常用的算数、位、逻辑和比较操作，也可以进行条件和无条件跳转。</p>
+</li>
+<li><p>消息调用：</p>
+<p>合约可以通过消息调用的方式来调用其他合约，或者发送以太币到非合约账户。每个交易都可以被认为时一个顶层消息调用，这个消息调用会一次产生更多的消息调用。</p>
+</li>
+<li><p>代码调用和库：</p>
+<p>特殊的消息调用（callcode），加载来自目标地址的代码，使得solidity可以实现“库”。</p>
+</li>
+</ul>
+<h5 id="以太坊的状态转换："><a href="#以太坊的状态转换：" class="headerlink" title="以太坊的状态转换："></a>以太坊的状态转换：</h5><p>当EVM运行的时候，它的完整状态计算可以由元组（block_state,transaction,message,code,memory,stack,pc,gas）来定义，每个指令如何影响元组都有定义。</p>
+<ul>
+<li>检查交易格式、签名、随机数是否与发送者账户的随机数匹配。</li>
+<li>从发送者账户减去交易费用fee=STARTGAS*GASPRICE，增加发送者账户的随机数。</li>
+<li>设定初值Gas=STARTGAS，并根据交易中的字节数减去一定量的燃料。</li>
+<li>从发送者账户转移价值到接收者账户。若接受账户不存在，创建此帐户。若接受账户是合约，运行合约代码。</li>
+<li>价值转移失败，仍需支付交易费用给矿工。</li>
+<li>价值转移成功，多余燃料还给发送者。</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/05/05/以太坊/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-区块链运作的核心技术" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
