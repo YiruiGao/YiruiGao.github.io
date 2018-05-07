@@ -134,6 +134,122 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-区块链1-0架构：比特币区块链" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/07/区块链1-0架构：比特币区块链/">区块链1.0架构：比特币区块链</a>
+    </h1>
+  
+
+        
+        <a href="/2018/05/07/区块链1-0架构：比特币区块链/" class="archive-article-date">
+  	<time datetime="2018-05-07T14:55:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-07</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="比特币前端："><a href="#比特币前端：" class="headerlink" title="比特币前端："></a>比特币前端：</h5><ul>
+<li>钱包：保存用户私钥，管理用户余额，提供交易功能。<ul>
+<li>非决定性钱包：直接保存私钥，私钥数据保存在Berkeley DB中;</li>
+<li>决定性钱包：保存私钥种子，用私钥种子生成私钥。</li>
+</ul>
+</li>
+<li>HTTP/JSON RPC API：供外部控制比特币节点的端口。</li>
+<li>命令行工具bitcoin-cli：通过JSON RPC API接口调用比特币后台的bitcoind。</li>
+<li>比特币浏览器bx：除bitcoin-cli的功能外，还提供密钥管理和处理工具。</li>
+<li>图形开发工具（QT）</li>
+</ul>
+<h5 id="比特币节点后端："><a href="#比特币节点后端：" class="headerlink" title="比特币节点后端："></a>比特币节点后端：</h5><p>bitcoin-qt是包含前后端（除挖矿功能以外）的一体化节点，bitcoind是主要的比特币后台程序。</p>
+<ul>
+<li><p>区块链管理：</p>
+<ul>
+<li>下载区快链：在比特币节点第一次加入网络运行时，先要下载并验证整条区块链。“区块报头先行”下载方式：从邻节点下载所有区块头，再并行的从多个邻节点下载区快体。</li>
+<li>接受区块链：一个节点接收到新区块，若该区块头包含前一区块的哈希与当前节点区块哈希相同，则尝试链接该新区块，并将它作为当前链条的最懂端区块。</li>
+<li>区块链验证：连接区块函数ConnectBlock()检测双花交易，即验证是否交易的来源能在UTXO记录中找到。若受网络延迟影响，节点接收的区块可能不安顺序到达，就会成为“孤儿”，等待其父区块到来后，可被纳入链中。</li>
+<li>重组区块链：当节点发现网络中有一条不基于它当前链的更长链时，断开现有区块并重组。该过程涉及UTXO的更改，被断开的区块中的交易会回退到交易内存池。</li>
+</ul>
+</li>
+<li><p>区块验证：该模块会基于特定条件检查收到的交易是否合规。</p>
+</li>
+<li><p>内存池（交易池）管理：节点将通过验证的交易放在一个交易池中，挖到区块后，按一定的优先级从交易池中选取交易放入区块。“孤儿”交易池指，如果一个Tx的输入相对应的UTXO找不到，暂时放入“孤儿”交易池。</p>
+</li>
+<li><p>邻节点管理：新节点初始启动时要发现其他节点并至少与一个连接。</p>
+<p>发现方式：</p>
+<ul>
+<li>“DNS”种子：提供比特币节点地址的服务器；</li>
+<li>直接把一个已知邻节点作为种子节点，通过它发现更多邻节点。</li>
+</ul>
+<p>该模块会自动维持连接，动态更新邻节点。</p>
+</li>
+<li><p>共识管理：包括挖矿、区块验证和交易验证的规则。</p>
+</li>
+<li><p>规则管理：管理共识规则以外的个性化规则，比如拒绝大于200K的交易。</p>
+</li>
+<li><p>密码模块：处理比特币的地址。</p>
+</li>
+<li><p>签名模块：实现数字签名以及生成公钥。</p>
+</li>
+<li><p>脚本引擎：基于堆栈的非图灵完备的校验的运算平台。</p>
+</li>
+<li><p>挖矿模块：竞争记账权。</p>
+</li>
+<li><p>HTTP/JSON RPC服务端：该接口缺省只接受来自本机的客户端连接请求，远程连接风险太大。</p>
+</li>
+<li><p>Berkeley DB和Level DB数据库：Berkeley DB做钱包数据库，它是文件数据库，保存键-值对；区块数据不存在数据库，而作为文件类型存放在硬盘上；Level DB存放区块索引与UTXO，保存键-值对；回滚记录以文件方式存储。</p>
+</li>
+<li><p>P2P网络管理：在P2P网络上实现和其他邻节点的通信功能。</p>
+</li>
+<li><p>ZMQ队列管理：消息队列管理和消息分发。</p>
+</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/05/07/区块链1-0架构：比特币区块链/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-以太坊" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
