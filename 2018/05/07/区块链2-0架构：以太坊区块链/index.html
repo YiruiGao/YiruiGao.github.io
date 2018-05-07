@@ -6,15 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2018 | Hexo</title>
+  <title>区块链2.0架构：以太坊区块链 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2018/index.html">
+  <meta name="description" content="区块链2.0架构把区块链作为一UTXO个可编程的分布式信用基础设施，支持智能合约应用。  账户设计： 比特币没有账户的概念，每个用户的余额都是从他们在区块链上的UTXO计算出来的。以太坊的设计是将区块链作为一个通用的管理对象状态转换的去中心化平台，账户就是有状态的对象。外部账户的状态就是余额，而合约账户的状态可以是余额、代码执行情况，以及合约的存储。以太坊网络的状态就是所有账户的状态，该状态由每个">
+<meta property="og:type" content="article">
+<meta property="og:title" content="区块链2.0架构：以太坊区块链">
+<meta property="og:url" content="http://yoursite.com/2018/05/07/区块链2-0架构：以太坊区块链/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="区块链2.0架构把区块链作为一UTXO个可编程的分布式信用基础设施，支持智能合约应用。  账户设计： 比特币没有账户的概念，每个用户的余额都是从他们在区块链上的UTXO计算出来的。以太坊的设计是将区块链作为一个通用的管理对象状态转换的去中心化平台，账户就是有状态的对象。外部账户的状态就是余额，而合约账户的状态可以是余额、代码执行情况，以及合约的存储。以太坊网络的状态就是所有账户的状态，该状态由每个">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-05-07T15:37:43.597Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="区块链2.0架构：以太坊区块链">
+<meta name="twitter:description" content="区块链2.0架构把区块链作为一UTXO个可编程的分布式信用基础设施，支持智能合约应用。  账户设计： 比特币没有账户的概念，每个用户的余额都是从他们在区块链上的UTXO计算出来的。以太坊的设计是将区块链作为一个通用的管理对象状态转换的去中心化平台，账户就是有状态的对象。外部账户的状态就是余额，而合约账户的状态可以是余额、代码执行情况，以及合约的存储。以太坊网络的状态就是所有账户的状态，该状态由每个">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -132,298 +136,168 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-区块链2-0架构：以太坊区块链" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      区块链2.0架构：以太坊区块链
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/05/07/区块链2-0架构：以太坊区块链/" class="archive-article-date">
+
+        
+        <a href="/2018/05/07/区块链2-0架构：以太坊区块链/" class="archive-article-date">
   	<time datetime="2018-05-07T15:37:13.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-07</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/07/区块链2-0架构：以太坊区块链/">区块链2.0架构：以太坊区块链</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>区块链2.0架构把区块链作为一UTXO个可编程的分布式信用基础设施，支持智能合约应用。</p>
+<ul>
+<li><p>账户设计：</p>
+<p>比特币没有账户的概念，每个用户的余额都是从他们在区块链上的UTXO计算出来的。以太坊的设计是将区块链作为一个通用的管理对象状态转换的去中心化平台，账户就是有状态的对象。外部账户的状态就是余额，而合约账户的状态可以是余额、代码执行情况，以及合约的存储。以太坊网络的状态就是所有账户的状态，该状态由每个区块的交易来更新，同时须在全网形成共识。</p>
+<p>外部账户可以通过发送交易到合约账户来实现对合同的调用。</p>
+</li>
+<li><p>区块链设计：</p>
+<p>以太坊引入了账户的概念，带来更为复杂的校验和查询需求。以太坊区块头中存放了三个根哈希值：Merkle根、状态树根、收据树根。账户的状态由键值表来表示，在Patricia树中，键被编码成向下访问树的路径，值是账户里声明的变量（余额、nonce、代码、存储）。另一点不同于比特币的是，以太坊的区块链中的每个区块保存区块链号和区块难度。</p>
+</li>
+<li><p>PoW机制：</p>
+<p>以太坊的PoW算法为Ethash算法，概算法加入了内存难度，即算法中要求选择由随机数和区块头报文决定的一部分固定资源，这些资源叫“有向无环图（DAG）”，一般是几个GB。每3000个区块后需要有一个全新的DAG，称为一个epoch。因为DAG只和区块链深度有关，因此可以提前生成，客户端需要等生成了DAG后才能产生新区块，进行epoch转换时，若客户端没有预先生成DAG，网络会出现大规模的延迟。</p>
+<p>采用“GHOST”算法来构区块链，以太坊的区块链是一棵树，它包含“叔区块”。“叔区块”指符合难度条件，但区块里的交易不被确认的区块，即废块（stale）。产生“叔区块”的矿工和将“叔区块”包含进区块链的矿工都会得到奖励。</p>
+<p>“叔区块”是当前链接区块往前一推最多6个的“祖先”废块，每个区块最多能链接两个“叔区块”。</p>
+</li>
+<li><p>计算和图灵完备：</p>
+<p>EVM是图灵完备的计算环境，即在EVM上可以做所有运算，包括无线循环，另外，一个合约可以调用其他合约，提供了潜在的递归调用。为了防止破坏者通过强制矿工或者全节点进入死循环而将他们基本关掉，以太坊采用了经济的方法保证安全—Gas。</p>
+</li>
+<li><p>EVM高级语言：</p>
+<p>以太坊提供高级语言供用户编写智能合约，程序会被编译成evm字节吗，部署在以太坊区块链上。</p>
+</li>
+<li><p>以太坊P2P网络：</p>
+<ul>
+<li><p>RLPx协议：专门为区中心化应用设计的，采用密码方式通信的P2P网络协议，为应用在P2P网络上的通信提供通用的传输和接口。</p>
+<p>RLP（递归长度前缀）是一种编码方式，其目的是将二进制数据进行任意嵌套的数组编码，在以太坊里，RLP用来对对象进行编码。</p>
+</li>
+<li><p>Whisper协议：DApp间的通信协议。是一个纯标志的系统标志，它提供一个低层次的（非应用相关的）但又简易使用的API，而不需要记忆底层的硬件属性。</p>
+<p>Whisper是为需要大规模的多对多数据发现 、信号谈判和最少的传输通信、完全的隐私保护的下一代DApp而设计的。</p>
+</li>
+</ul>
+</li>
+<li><p>事件：</p>
+<p>合约是在区块验证的时候被交易触发。合约与外部的通信是通过日志事件实现的。日志事件是交易执行时产生的收据的一部分。</p>
+</li>
+</ul>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/05/07/区块链2-0架构：以太坊区块链/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/05/07/区块链1-0架构：比特币区块链/" class="archive-article-date">
-  	<time datetime="2018-05-07T14:55:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-07</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/05/07/区块链1-0架构：比特币区块链/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">区块链1.0架构：比特币区块链</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/07/区块链1-0架构：比特币区块链/">区块链1.0架构：比特币区块链</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/05/05/以太坊/" class="archive-article-date">
-  	<time datetime="2018-05-05T15:54:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/05/以太坊/">以太坊</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/05/05/区块链运作的核心技术/" class="archive-article-date">
-  	<time datetime="2018-05-05T15:09:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/05/区块链运作的核心技术/">区块链运作的核心技术</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/05/03/区块链基础概念/" class="archive-article-date">
-  	<time datetime="2018-05-03T15:44:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-03</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/05/03/区块链基础概念/">区块链基础概念</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/15/Ubuntu的环境变量/" class="archive-article-date">
-  	<time datetime="2018-03-15T11:21:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/15/Ubuntu的环境变量/">Ubuntu的环境变量</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/12/Linux下查找文件的几种方式/" class="archive-article-date">
-  	<time datetime="2018-03-12T07:45:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-12</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/12/Linux下查找文件的几种方式/">Linux下查找文件的几种方式</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/linux//" class="article-tag-list-link color1">linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/07/git基础-常用命令/" class="archive-article-date">
-  	<time datetime="2018-03-07T08:00:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-07</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/07/git基础-常用命令/">git基础 --常用命令</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/git//" class="article-tag-list-link color4">git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/02/17/Hexo-Github搭建博客/" class="archive-article-date">
-  	<time datetime="2018-02-17T04:44:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/02/17/Hexo-Github搭建博客/">Hexo+Github搭建博客</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/hexo//" class="article-tag-list-link color5">hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -446,8 +320,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
