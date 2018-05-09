@@ -6,17 +6,17 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hexo</title>
+  <title>Iris&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
+<meta property="og:title" content="Iris&#39;s Blog">
 <meta property="og:url" content="http://yoursite.com/index.html">
-<meta property="og:site_name" content="Hexo">
+<meta property="og:site_name" content="Iris&#39;s Blog">
 <meta property="og:locale" content="default">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="Iris&#39;s Blog">
   
-    <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    <link rel="alternative" href="/atom.xml" title="Iris&#39;s Blog" type="application/atom+xml">
   
   
     <link rel="icon" href="/favicon.png">
@@ -158,37 +158,9 @@
 <ul>
 <li><p>账户设计：</p>
 <p>比特币没有账户的概念，每个用户的余额都是从他们在区块链上的UTXO计算出来的。以太坊的设计是将区块链作为一个通用的管理对象状态转换的去中心化平台，账户就是有状态的对象。外部账户的状态就是余额，而合约账户的状态可以是余额、代码执行情况，以及合约的存储。以太坊网络的状态就是所有账户的状态，该状态由每个区块的交易来更新，同时须在全网形成共识。</p>
-<p>外部账户可以通过发送交易到合约账户来实现对合同的调用。</p>
-</li>
-<li><p>区块链设计：</p>
-<p>以太坊引入了账户的概念，带来更为复杂的校验和查询需求。以太坊区块头中存放了三个根哈希值：Merkle根、状态树根、收据树根。账户的状态由键值表来表示，在Patricia树中，键被编码成向下访问树的路径，值是账户里声明的变量（余额、nonce、代码、存储）。另一点不同于比特币的是，以太坊的区块链中的每个区块保存区块链号和区块难度。</p>
-</li>
-<li><p>PoW机制：</p>
-<p>以太坊的PoW算法为Ethash算法，概算法加入了内存难度，即算法中要求选择由随机数和区块头报文决定的一部分固定资源，这些资源叫“有向无环图（DAG）”，一般是几个GB。每3000个区块后需要有一个全新的DAG，称为一个epoch。因为DAG只和区块链深度有关，因此可以提前生成，客户端需要等生成了DAG后才能产生新区块，进行epoch转换时，若客户端没有预先生成DAG，网络会出现大规模的延迟。</p>
-<p>采用“GHOST”算法来构区块链，以太坊的区块链是一棵树，它包含“叔区块”。“叔区块”指符合难度条件，但区块里的交易不被确认的区块，即废块（stale）。产生“叔区块”的矿工和将“叔区块”包含进区块链的矿工都会得到奖励。</p>
-<p>“叔区块”是当前链接区块往前一推最多6个的“祖先”废块，每个区块最多能链接两个“叔区块”。</p>
-</li>
-<li><p>计算和图灵完备：</p>
-<p>EVM是图灵完备的计算环境，即在EVM上可以做所有运算，包括无线循环，另外，一个合约可以调用其他合约，提供了潜在的递归调用。为了防止破坏者通过强制矿工或者全节点进入死循环而将他们基本关掉，以太坊采用了经济的方法保证安全—Gas。</p>
-</li>
-<li><p>EVM高级语言：</p>
-<p>以太坊提供高级语言供用户编写智能合约，程序会被编译成evm字节吗，部署在以太坊区块链上。</p>
-</li>
-<li><p>以太坊P2P网络：</p>
-<ul>
-<li><p>RLPx协议：专门为区中心化应用设计的，采用密码方式通信的P2P网络协议，为应用在P2P网络上的通信提供通用的传输和接口。</p>
-<p>RLP（递归长度前缀）是一种编码方式，其目的是将二进制数据进行任意嵌套的数组编码，在以太坊里，RLP用来对对象进行编码。</p>
-</li>
-<li><p>Whisper协议：DApp间的通信协议。是一个纯标志的系统标志，它提供一个低层次的（非应用相关的）但又简易使用的API，而不需要记忆底层的硬件属性。</p>
-<p>Whisper是为需要大规模的多对多数据发现 、信号谈判和最少的传输通信、完全的隐私保护的下一代DApp而设计的。</p>
-</li>
-</ul>
-</li>
-<li><p>事件：</p>
-<p>合约是在区块验证的时候被交易触发。合约与外部的通信是通过日志事件实现的。日志事件是交易执行时产生的收据的一部分。</p>
-</li>
-</ul>
-
+        
+          <a class="article-more-a" href="/2018/05/07/区块链2-0架构：以太坊区块链/#more">more >></a>
+        
       
 
       
@@ -196,6 +168,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">区块链</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -256,55 +239,10 @@
 <li>决定性钱包：保存私钥种子，用私钥种子生成私钥。</li>
 </ul>
 </li>
-<li>HTTP/JSON RPC API：供外部控制比特币节点的端口。</li>
-<li>命令行工具bitcoin-cli：通过JSON RPC API接口调用比特币后台的bitcoind。</li>
-<li>比特币浏览器bx：除bitcoin-cli的功能外，还提供密钥管理和处理工具。</li>
-<li>图形开发工具（QT）</li>
 </ul>
-<h5 id="比特币节点后端："><a href="#比特币节点后端：" class="headerlink" title="比特币节点后端："></a>比特币节点后端：</h5><p>bitcoin-qt是包含前后端（除挖矿功能以外）的一体化节点，bitcoind是主要的比特币后台程序。</p>
-<ul>
-<li><p>区块链管理：</p>
-<ul>
-<li>下载区快链：在比特币节点第一次加入网络运行时，先要下载并验证整条区块链。“区块报头先行”下载方式：从邻节点下载所有区块头，再并行的从多个邻节点下载区快体。</li>
-<li>接受区块链：一个节点接收到新区块，若该区块头包含前一区块的哈希与当前节点区块哈希相同，则尝试链接该新区块，并将它作为当前链条的最懂端区块。</li>
-<li>区块链验证：连接区块函数ConnectBlock()检测双花交易，即验证是否交易的来源能在UTXO记录中找到。若受网络延迟影响，节点接收的区块可能不安顺序到达，就会成为“孤儿”，等待其父区块到来后，可被纳入链中。</li>
-<li>重组区块链：当节点发现网络中有一条不基于它当前链的更长链时，断开现有区块并重组。该过程涉及UTXO的更改，被断开的区块中的交易会回退到交易内存池。</li>
-</ul>
-</li>
-<li><p>区块验证：该模块会基于特定条件检查收到的交易是否合规。</p>
-</li>
-<li><p>内存池（交易池）管理：节点将通过验证的交易放在一个交易池中，挖到区块后，按一定的优先级从交易池中选取交易放入区块。“孤儿”交易池指，如果一个Tx的输入相对应的UTXO找不到，暂时放入“孤儿”交易池。</p>
-</li>
-<li><p>邻节点管理：新节点初始启动时要发现其他节点并至少与一个连接。</p>
-<p>发现方式：</p>
-<ul>
-<li>“DNS”种子：提供比特币节点地址的服务器；</li>
-<li>直接把一个已知邻节点作为种子节点，通过它发现更多邻节点。</li>
-</ul>
-<p>该模块会自动维持连接，动态更新邻节点。</p>
-</li>
-<li><p>共识管理：包括挖矿、区块验证和交易验证的规则。</p>
-</li>
-<li><p>规则管理：管理共识规则以外的个性化规则，比如拒绝大于200K的交易。</p>
-</li>
-<li><p>密码模块：处理比特币的地址。</p>
-</li>
-<li><p>签名模块：实现数字签名以及生成公钥。</p>
-</li>
-<li><p>脚本引擎：基于堆栈的非图灵完备的校验的运算平台。</p>
-</li>
-<li><p>挖矿模块：竞争记账权。</p>
-</li>
-<li><p>HTTP/JSON RPC服务端：该接口缺省只接受来自本机的客户端连接请求，远程连接风险太大。</p>
-</li>
-<li><p>Berkeley DB和Level DB数据库：Berkeley DB做钱包数据库，它是文件数据库，保存键-值对；区块数据不存在数据库，而作为文件类型存放在硬盘上；Level DB存放区块索引与UTXO，保存键-值对；回滚记录以文件方式存储。</p>
-</li>
-<li><p>P2P网络管理：在P2P网络上实现和其他邻节点的通信功能。</p>
-</li>
-<li><p>ZMQ队列管理：消息队列管理和消息分发。</p>
-</li>
-</ul>
-
+        
+          <a class="article-more-a" href="/2018/05/07/区块链1-0架构：比特币区块链/#more">more >></a>
+        
       
 
       
@@ -312,6 +250,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">区块链</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -368,49 +317,9 @@
       
         <p>以太坊是智能合约的完整解决方案，被设计成了一个通用的区中心化平台，拥有一套完整的、可扩展其功能的工具。</p>
 <p><img src="/img/810542-20170509211714863-1437264347.jpg" alt="img"></p>
-<h5 id="以太坊的核心概念："><a href="#以太坊的核心概念：" class="headerlink" title="以太坊的核心概念："></a>以太坊的核心概念：</h5><ul>
-<li><p>以太坊虚拟机（EVM）：</p>
-<p>智能合约的运行环境。</p>
-</li>
-<li><p>账户：</p>
-<p>以太坊有两类账户，它们共用一个地址空间。以太坊的账户包含四部分，随机数，用于确定每笔交易只能被处理一次；账户目前的以太币余额；账户的合约代码；账户的存储（默认为空）。</p>
-<p>在必特币上，由于只有UTXO而没有账户的概念，需要导入区块链数据库，解析所有交易，抽取出某个用户的交易情况。而以太坊可以在实时的区块链上，根据一个地址实时查看当前账户情况和交易状态。</p>
-<ul>
-<li>外部账户：被私钥-公钥对控制，地址由公钥得到，可进行普通交易。</li>
-<li>合约账户：被存储在账户中的代码控制，地址由合约创建者的地址和该地址发出过的交易数量计算得到，每当合约账户收到一条消息，合约内部的代码就会被激活，允许它对内部存储进行读取、写入、发送其他消息和创建合约。</li>
-</ul>
-</li>
-<li><p>消息：</p>
-<p>类似于比特币的交易，不同点有：可以由合约创建账户；可以包含数据；若接收方为合约账户，可以对消息进行回应。</p>
-</li>
-<li><p>交易：</p>
-<p>指从外部账户发出的消息的签名数据包。包含接收者、签名、帐户余额、要发送的数据、STAETGAS（对计算步骤做限制）、GASPRICE（每一计算步骤需要支付矿工的燃料的价格）。</p>
-</li>
-<li><p>存储、主存、栈：</p>
-<p>存储：每个账户都有一块永久的内存区域，称为存储。</p>
-<p>主存：合约执行每次消息调用时都有一块新的被清除过的主存。</p>
-<p>栈：EVM是基于栈的，即所有计算都在一个栈的区域内执行。</p>
-</li>
-<li><p>指令集：</p>
-<p>具备常用的算数、位、逻辑和比较操作，也可以进行条件和无条件跳转。</p>
-</li>
-<li><p>消息调用：</p>
-<p>合约可以通过消息调用的方式来调用其他合约，或者发送以太币到非合约账户。每个交易都可以被认为时一个顶层消息调用，这个消息调用会一次产生更多的消息调用。</p>
-</li>
-<li><p>代码调用和库：</p>
-<p>特殊的消息调用（callcode），加载来自目标地址的代码，使得solidity可以实现“库”。</p>
-</li>
-</ul>
-<h5 id="以太坊的状态转换："><a href="#以太坊的状态转换：" class="headerlink" title="以太坊的状态转换："></a>以太坊的状态转换：</h5><p>当EVM运行的时候，它的完整状态计算可以由元组（block_state,transaction,message,code,memory,stack,pc,gas）来定义，每个指令如何影响元组都有定义。</p>
-<ul>
-<li>检查交易格式、签名、随机数是否与发送者账户的随机数匹配。</li>
-<li>从发送者账户减去交易费用fee=STARTGAS*GASPRICE，增加发送者账户的随机数。</li>
-<li>设定初值Gas=STARTGAS，并根据交易中的字节数减去一定量的燃料。</li>
-<li>从发送者账户转移价值到接收者账户。若接受账户不存在，创建此帐户。若接受账户是合约，运行合约代码。</li>
-<li>价值转移失败，仍需支付交易费用给矿工。</li>
-<li>价值转移成功，多余燃料还给发送者。</li>
-</ul>
-
+        
+          <a class="article-more-a" href="/2018/05/05/以太坊/#more">more >></a>
+        
       
 
       
@@ -418,6 +327,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">以太坊</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -478,37 +398,10 @@
 <li><p>PoW（工作量证明）：</p>
 <p>挖矿机制，完全区中心化，只要破坏者的算力不超过所有节点算力的50%，就可以保证网络的交易状态一致，但会造成大量资源浪费，矿池算力的高度集中背离了区中心化的设计初衷。</p>
 </li>
-<li><p>PoS（权益证明）：</p>
-<p>要求节点提供一定数量的代币来获取竞争区块链记账权的一种分布式公式机制。会使网络共识受少数富人支配。</p>
-</li>
-<li><p>DPoS（股份授权证明）：</p>
-<p>类似于股东及会投票选举。</p>
-</li>
-<li><p>分布式一致性算法：</p>
-<p>拜占庭容错算法（PBFT）能解决拜占庭将军问题；Paxos、Raft能解决非拜占庭问题。分布式一致性算法目前常用于联盟链和私有链。</p>
-</li>
 </ul>
-<h5 id="解锁-锁定脚本："><a href="#解锁-锁定脚本：" class="headerlink" title="解锁/锁定脚本："></a>解锁/锁定脚本：</h5><p>脚本是区块链上实现自动验证、自动执行合约的重要技术。</p>
-<p>锁定脚本是在输出交易上加上的条件，可以看做题目，只有揭开了题目的人才可以花这个UTXO；解锁脚本位于交易的输入，是相应难题的解。</p>
-<h5 id="Merkle证明："><a href="#Merkle证明：" class="headerlink" title="Merkle证明："></a>Merkle证明：</h5><p>将交易存储在区块中，使得交易不能被篡改，同时也容易验证交易是否包含在一个特定的区块中。</p>
-<h5 id="区块链的交易流程："><a href="#区块链的交易流程：" class="headerlink" title="区块链的交易流程："></a>区块链的交易流程：</h5><ul>
-<li><p>交易的生成：</p>
-<p>所有者A用他的私钥对前一次交易的UTXO和下一位所有者B签署一个数字签名，制成交易单。</p>
-</li>
-<li><p>交易的传播：</p>
-<p>A将交易单广播至全网，每个节点将收到的交易信息纳入一个区块中。</p>
-</li>
-<li><p>工作量证明：</p>
-<p>节点竞争记账权。</p>
-</li>
-<li><p>整个网络节点验证：</p>
-<p>当一个节点得到记账权时，它就像全网广播该区块，并有其他节点验证。</p>
-</li>
-<li><p>记录到链：</p>
-<p>全网其他节点核对无误后，将该区快添加到链。</p>
-</li>
-</ul>
-
+        
+          <a class="article-more-a" href="/2018/05/05/区块链运作的核心技术/#more">more >></a>
+        
       
 
       
@@ -516,6 +409,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">区块链</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -572,26 +476,9 @@
       
         <h5 id="区块链基础："><a href="#区块链基础：" class="headerlink" title="区块链基础："></a>区块链基础：</h5><p>区块链本质上是一个分布式的公共账本，任何人都可以对这个账本进行核查，但不存在一个单一的用户可以对它进行控制，它只按照严格的规则和共识来修改。</p>
 <p>互联网实现了信息的传播，区块链实现了价值的转移，区块链可以看作是“价值互联网”的基础协议，二者都是建立在TCP/IP协议之上的应用层协议。</p>
-<p>区块链技术是利用块链式数据结构来验证与存储数据、利用分布式节点共识算法来生成和更新数据、利用密码学的方式保证数据传输和访问的安全、利用由自动化脚本代码组成的智能合约来编程和操作数据的一种全新的分布式基础架构与计算范式。</p>
-<h5 id="区块链特征："><a href="#区块链特征：" class="headerlink" title="区块链特征："></a>区块链特征：</h5><ul>
-<li>区中心化：区块链由众多节点组成一个端到端的网络，不存在中心化的设备和管理机构。</li>
-<li>去信任：系统中所有节点之间通过数字签名技术进行验证，无需信任也可以进行交易，只要哦按照系统既定的规则进行，节点之间不能页无法欺骗其他节点。</li>
-<li>集体维护：系统中所有人共同参与维护工作。</li>
-<li>可靠数据库：除非控制超过51%的节点才可能操纵系统。</li>
-</ul>
-<h5 id="挖矿与分叉："><a href="#挖矿与分叉：" class="headerlink" title="挖矿与分叉："></a>挖矿与分叉：</h5><p>所谓挖矿，实际上就是穷举随机数算法，把上个区块的哈希值加上一0分钟内的全部交易的Merkel根，再加上一个随机数，算出一个256位的字符串哈希值，输入的随机数nonce使哈希满足目标条件，即可获得这个区块的记账权。</p>
-<p>若两个矿工几乎同时“挖出”两个新区快，这时主链就会出现分叉，系统会选择后续累计工作量证明最大的区块链，即选择更长的链。</p>
-<h5 id="实践戳和不可篡改性"><a href="#实践戳和不可篡改性" class="headerlink" title="实践戳和不可篡改性"></a>实践戳和不可篡改性</h5><p>时间戳为未来基于区块链的互联网和大数据增加了时间维度，使得数据更容易追溯，可作为存在性证明的重要参数，即证明特定数据在某特定时刻确实存在。</p>
-<h5 id="分布式数据库："><a href="#分布式数据库：" class="headerlink" title="分布式数据库："></a>分布式数据库：</h5><p>任何一个节点的数据破坏都不会影响整个数据库的正常运转，因为其他健康节点都保存着完整的数据库。</p>
-<h5 id="UTXO交易模式："><a href="#UTXO交易模式：" class="headerlink" title="UTXO交易模式："></a>UTXO交易模式：</h5><p>指未花费的交易输出，除创世区块外，所有区块中的交易（Tx）会存在若干输入与若干输出（coinbase只有输出），某笔交易的输入必须是另一笔交易的未被使用的输出。</p>
-<h5 id="哈希函数："><a href="#哈希函数：" class="headerlink" title="哈希函数："></a>哈希函数：</h5><p>在有限合理的时间内，将任意长度的消息压缩为固定长度的二进制串。</p>
-<h5 id="Merkle树："><a href="#Merkle树：" class="headerlink" title="Merkle树："></a>Merkle树：</h5><p>具有树结构的所有特点，可以快速归纳和验证区块数据的完整性。支持“简化支付验证协议”（SPV）。</p>
-<h5 id="双重支付（双花）："><a href="#双重支付（双花）：" class="headerlink" title="双重支付（双花）："></a>双重支付（双花）：</h5><p>利用货币的数字特性用“同一笔钱”完成两次或多次支付。</p>
-<h5 id="P2P网络（peer-to-peer）："><a href="#P2P网络（peer-to-peer）：" class="headerlink" title="P2P网络（peer-to-peer）："></a>P2P网络（peer-to-peer）：</h5><p>网络中的所有节点具有同等低位，不存在任何特殊化的中心节点和层级结构，每个节点均会承担网络路由、验证数据区块等功能。</p>
-<h5 id="加密算法："><a href="#加密算法：" class="headerlink" title="加密算法："></a>加密算法：</h5><p>比特币系统采用一种非对称加密算法–椭圆曲线加密算法（ECC）。</p>
-<h5 id="数字签名："><a href="#数字签名：" class="headerlink" title="数字签名："></a>数字签名：</h5><p>发送者将信息哈希，用私钥对该哈希值加密，得出一个签名，然后将信息和签名一起发送给接受者。接受者使用发送者的公钥对签名解密，得到信息的哈希值，可鉴定信息是否来自发送者或有无被篡改。</p>
-<h5 id="比特币的隐私模型："><a href="#比特币的隐私模型：" class="headerlink" title="比特币的隐私模型："></a>比特币的隐私模型：</h5><p>只需提供比特币钱包的地址就可以完成交易，在一定程度上，无法追溯到交易者本身。</p>
-
+        
+          <a class="article-more-a" href="/2018/05/03/区块链基础概念/#more">more >></a>
+        
       
 
       
@@ -599,6 +486,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">区块链</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -655,14 +553,9 @@
       
         <h5 id="什么是环境变量？"><a href="#什么是环境变量？" class="headerlink" title="什么是环境变量？"></a>什么是环境变量？</h5><p>当我们在命令行输入命令，系统会按照环境变量的设置，去相应的路径下查找这个命令的可执行文件，所以你不需要在执行某个命令之前进入到它所在的路径，环境变量都帮你记录啦～</p>
 <p>Linux是一个多用户多任务的操作系统，每个用户都可以配置自己的环境变量，当然，也有全局环境变量可以为所有用户进行配置。所以，环境变量可以分为系统环境变量和用户环境变量。</p>
-<h5 id="系统环境变量"><a href="#系统环境变量" class="headerlink" title="系统环境变量"></a>系统环境变量</h5><p>系统环境变量对所有用户有效，并且设置之后永久有效（不会在重启终端后就消失），保存在/etc/profile中，编辑这个文件就可以修改系统环境变量：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/profile</span><br><span class="line">export PATH=&quot;$PATH:/my_path&quot;</span><br></pre></td></tr></table></figure>
-<p>保存退出后需要<code>source /etc/profile</code>或重启终端才可以生效。</p>
-<h5 id="用户环境变量"><a href="#用户环境变量" class="headerlink" title="用户环境变量"></a>用户环境变量</h5><p>用户环境变量一般在用户主目录下的 <code>.profile</code> 或 <code>.bashrc</code> 或 <code>.zshrc</code>，根据当前登录的shell不同，系统会执行不同的文件，这个看名字应该就明白了哈。编辑以上文件修改用户环境变量：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.zshrc</span><br><span class="line">export PATH=&quot;$PATH:/my_path&quot;</span><br></pre></td></tr></table></figure>
-<p>保存退出后需要<code>source /etc/profile</code>或重启终端才可以生效。</p>
-<p>如果只需要临时的环境变量，改动文件比较麻烦而且可能忘记删掉，不用担心，你可以直接在命令行输入<code>export 变量名=变量值</code>来添加临时环境变量，它将在关闭shell后消失。</p>
-
+        
+          <a class="article-more-a" href="/2018/03/15/Ubuntu的环境变量/#more">more >></a>
+        
       
 
       
@@ -670,6 +563,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">ubuntu</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -725,21 +629,9 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h4 id="Linux下查找文件"><a href="#Linux下查找文件" class="headerlink" title="Linux下查找文件"></a>Linux下查找文件</h4><p>Linux中有好几种查找文件的方式，让刚刚接触Linux的小伙伴眼花缭乱，到底该用哪个命令才能准确找到需要的文件，这几种命令有什么不同呢？且听我慢慢道来～</p>
-<h5 id="find"><a href="#find" class="headerlink" title="find"></a>find</h5><p>语法： <code>find   path   -option   [   -print ][ -exec -ok command ]   {} ;</code></p>
-<p>find命令用来在指定目录下查找文件。任何位于参数之前的字符串都将被视为欲查找的目录名。如果使用该命令时，不设置任何参数，则find命令将在当前目录下查找子目录与文件。并且将查找到的子目录和文件全部进行显示。</p>
-<p>实例： <code>find . -name &quot;*.c&quot;</code> 将目前目录及其子目录下所有延伸档名是 c 的文件列出来。</p>
-<p>说明： find是去硬盘查找，速度较慢但是查找的范围更全面。</p>
-<h5 id="locate"><a href="#locate" class="headerlink" title="locate"></a>locate</h5><p>语法：<code>locate [-d ][--help][--version][范本样式...]</code></p>
-<p>locate命令用于查找符合条件的文档，他会去保存文档和目录名称的数据库内，查找合乎范本样式条件的文档或目录。</p>
-<p>实例： <code>locate passwd</code> 查找passwd文件。</p>
-<p>说明： locate 只在/var/lib/slocate资料库中找，locate的速度比find快，它并不是真的查找，而是查数据库，一般文件数据库在/var/lib/slocate/slocate.db中，所以locate的查找并不是实时的，而是以数据库的更新为准，一般是系统自己维护，也可以手工升级数据库 ，命令为：<code>locate -u</code> 。</p>
-<h5 id="which"><a href="#which" class="headerlink" title="which"></a>which</h5><p>语法： <code>which [文件...]</code></p>
-<p>which指令会在环境变量$PATH设置的目录里查找符合条件的文件。</p>
-<p>实例： <code>which bash</code> 查看指令”bash”的绝对路径。</p>
-<h5 id="whereis"><a href="#whereis" class="headerlink" title="whereis"></a>whereis</h5><p>语法： <code>whereis [-bfmsu][-B &lt;目录&gt;...][-M &lt;目录&gt;...][-S &lt;目录&gt;...][文件...]</code></p>
-<p>该指令会在特定目录中查找符合条件的文件。这些文件应属于原始代码、二进制文件，或是帮助文件。该指令<strong>只能用于查找二进制文件、源代码文件和man手册页</strong>，一般文件的定位需使用locate命令。</p>
-<p>实例： <code>whereis bash</code> 查看指令”bash”的位置。</p>
-
+        
+          <a class="article-more-a" href="/2018/03/12/Linux下查找文件的几种方式/#more">more >></a>
+        
       
 
       
@@ -747,6 +639,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
@@ -813,61 +716,9 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h5 id="1-创建一个版本库"><a href="#1-创建一个版本库" class="headerlink" title="1.创建一个版本库"></a>1.创建一个版本库</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir learngit</span><br><span class="line">$ cd learngit</span><br><span class="line">$ pwd</span><br><span class="line">/Users/michael/learngit</span><br></pre></td></tr></table></figure>
-<h5 id="2-通过git-init命令把这个目录变成Git可以管理的仓库"><a href="#2-通过git-init命令把这个目录变成Git可以管理的仓库" class="headerlink" title="2.通过git init命令把这个目录变成Git可以管理的仓库"></a>2.通过<code>git init</code>命令把这个目录变成Git可以管理的仓库</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git init</span><br><span class="line">Initialized empty Git repository in /Users/michael/learngit/.git/</span><br></pre></td></tr></table></figure>
-<h5 id="3-把一个文件放到Git仓库"><a href="#3-把一个文件放到Git仓库" class="headerlink" title="3.把一个文件放到Git仓库"></a>3.把一个文件放到Git仓库</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ git add readme.txt           #readme.txt要放在learngit下</span><br><span class="line">$ git commit -m &quot;wrote a readme file&quot;               #提交到仓库中，可以多次add,一次commit</span><br><span class="line">[master (root-commit) cb926e7] wrote a readme file</span><br><span class="line"> 1 file changed, 2 insertions(+)</span><br><span class="line"> create mode 100644 readme.txt</span><br></pre></td></tr></table></figure>
-<h5 id="4-查看git仓库当前状态"><a href="#4-查看git仓库当前状态" class="headerlink" title="4.查看git仓库当前状态"></a>4.查看git仓库当前状态</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ git status</span><br><span class="line"># On branch master</span><br><span class="line"># Changes not staged for commit:</span><br><span class="line">#   (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)</span><br><span class="line">#   (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)</span><br><span class="line">#</span><br><span class="line">#    modified:   readme.txt</span><br><span class="line">#</span><br><span class="line">no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)</span><br></pre></td></tr></table></figure>
-<h5 id="5-查看文件被修改的内容"><a href="#5-查看文件被修改的内容" class="headerlink" title="5.查看文件被修改的内容"></a>5.查看文件被修改的内容</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$ git diff readme.txt </span><br><span class="line">diff --git a/readme.txt b/readme.txt</span><br><span class="line">index 46d49bf..9247db6 100644</span><br><span class="line">--- a/readme.txt</span><br><span class="line">+++ b/readme.txt</span><br><span class="line">@@ -1,2 +1,2 @@</span><br><span class="line">-Git is a version control system.</span><br><span class="line">+Git is a distributed version control system.</span><br><span class="line"> Git is free software.</span><br><span class="line"> </span><br><span class="line">$git diff HEAD -- readme.txt命令可以查看工作区和版本库里面最新版本的区别</span><br></pre></td></tr></table></figure>
-<h5 id="6-显示从最近到最远的提交日志"><a href="#6-显示从最近到最远的提交日志" class="headerlink" title="6.显示从最近到最远的提交日志"></a>6.显示从最近到最远的提交日志</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ git log   #--pretty=oneline改变输出格式</span><br><span class="line">commit 3628164fb26d48395383f8f31179f24e0882e1e0</span><br><span class="line">Author: Michael Liao &lt;askxuefeng@gmail.com&gt;</span><br><span class="line">Date:   Tue Aug 20 15:11:49 2013 +0800</span><br><span class="line"></span><br><span class="line">    append GPL</span><br></pre></td></tr></table></figure>
-<h5 id="7-版本回退与撤销回退"><a href="#7-版本回退与撤销回退" class="headerlink" title="7.版本回退与撤销回退"></a>7.版本回退与撤销回退</h5><ul>
-<li><code>HEAD</code>指向的版本是当前版本，Git允许在版本的历史之间穿梭，使用<code>git reset --hard commit_id</code>。</li>
-<li>穿梭前，用<code>git log</code>可以查看提交历史，以便确定要回退到哪个版本。</li>
-<li>要重返未来，用<code>git reflog</code>查看命令历史，以便确定要回到未来的哪个版本。</li>
-</ul>
-<h5 id="8-撤销修改"><a href="#8-撤销修改" class="headerlink" title="8.撤销修改"></a>8.撤销修改</h5><ul>
-<li>想直接丢弃工作区的修改时，用命令<code>git checkout -- file</code></li>
-<li>已经添加到了暂存区时，想丢弃修改，分两步，第一步用命令<code>git reset HEAD file</code>，第二步用命令<code>git checkout -- file</code>。</li>
-<li>已经提交了不合适的修改到版本库时，想要撤销本次提交，使用版本回退方式，不过前提是没有推送到远程库。</li>
-</ul>
-<h5 id="9-删除文件"><a href="#9-删除文件" class="headerlink" title="9.删除文件"></a>9.删除文件</h5><ul>
-<li>命令<code>git rm</code>用于删除一个文件。如果一个文件已经被提交到版本库，那么你永远不用担心误删，但是要小心，你只能恢复文件到最新版本，你会丢失<strong>最近一次提交后你修改的内容</strong>。</li>
-<li><code>git rm</code>后要用<code>git commit</code>提交删除操作</li>
-<li><code>git rm</code>后想要撤销删除操作，用<code>git checkout --file</code></li>
-</ul>
-<h5 id="10-远程仓库"><a href="#10-远程仓库" class="headerlink" title="10.远程仓库"></a>10.远程仓库</h5><ul>
-<li>要关联一个远程库，使用命令<code>git remote add origin git@server-name:path/repo-name.git</code>；</li>
-<li>关联后，使用命令<code>git push -u origin master</code>第一次推送master分支的所有内容</li>
-<li>此后，每次本地提交后，只要有必要，就可以使用命令<code>git push origin master</code>推送最新修改；</li>
-<li>要克隆一个仓库，首先必须知道仓库的地址，然后使用<code>git clone</code>命令克隆。</li>
-</ul>
-<h5 id="11-分支"><a href="#11-分支" class="headerlink" title="11.分支"></a>11.分支</h5><ul>
-<li>查看分支：<code>git branch</code></li>
-<li><code>git branch -r</code>：查看远程仓库的所有分支。</li>
-<li>创建分支：<code>git branch</code></li>
-<li>切换分支：<code>git checkout</code></li>
-<li>创建+切换分支：<code>git checkout -b</code></li>
-<li>合并某分支到当前分支：<code>git merge</code>，合并分支时，加上<code>--no-ff</code>参数就可以用普通模式合并，合并后的历史有分支，能看出来曾经做过合并，而<code>fast forward</code>合并就看不出来曾经做过合并。</li>
-<li>删除分支：<code>git branch -d &lt;name&gt;</code>，强制删除未合并到master的分支时用<code>git branch -D &lt;name&gt;</code>。</li>
-<li>当Git无法自动合并分支时，就必须首先解决冲突。解决冲突后，再提交，合并完成。</li>
-<li>用<code>git log --graph</code>命令可以看到分支合并图。</li>
-</ul>
-<h5 id="12-Bug分支"><a href="#12-Bug分支" class="headerlink" title="12.Bug分支"></a>12.Bug分支</h5><ul>
-<li>把当前工作现场“储藏”起来，等以后恢复现场后继续工作：<code>git stash</code>。</li>
-<li>查看当前分支下保存的stash：<code>git stash list</code>。</li>
-<li>恢复现场：<ul>
-<li>一是用<code>git stash apply</code>恢复，但是恢复后，stash内容并不删除，你需要用<code>git stash drop</code>来删除；</li>
-<li>另一种方式是用<code>git stash pop</code>，恢复的同时把stash内容也删了。</li>
-</ul>
-</li>
-</ul>
-<h5 id="13-多人协作"><a href="#13-多人协作" class="headerlink" title="13.多人协作"></a>13.多人协作</h5><ul>
-<li>查看远程库信息，使用<code>git remote -v</code>；</li>
-<li>本地新建的分支如果不推送到远程，对其他人就是不可见的；</li>
-<li>从本地推送分支，使用<code>git push origin branch-name</code>，如果推送失败，先用<code>git pull</code>抓取远程的新提交；</li>
-<li>在本地创建和远程分支对应的分支，使用<code>git checkout -b branch-name origin/branch-name</code>，本地和远程分支的名称最好一致；</li>
-<li>建立本地分支和远程分支的关联，使用<code>git branch --set-upstream branch-name origin/branch-name</code>；</li>
-<li>从远程抓取分支，使用<code>git pull</code>，如果有冲突，要先处理冲突。</li>
-</ul>
-
+        
+          <a class="article-more-a" href="/2018/03/07/git基础-常用命令/#more">more >></a>
+        
       
 
       
@@ -875,6 +726,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
@@ -942,69 +804,9 @@
       
         <h4 id="准备工作："><a href="#准备工作：" class="headerlink" title="准备工作："></a>准备工作：</h4><h5 id="1-安装git"><a href="#1-安装git" class="headerlink" title="1.安装git"></a>1.安装git</h5><p><code>$ brew install git   //需要首先安装HomeBrew</code></p>
 <h5 id="2-安装Nodejs"><a href="#2-安装Nodejs" class="headerlink" title="2.安装Nodejs"></a>2.安装Nodejs</h5><p>Node.js 是一个用Chrome’s V8 JavaScript engine 构建的 JavaScript 运行时框架。NPM的全称是Node Package Manager，是Nodejs的包管理器。</p>
-<p>两种安装Nodejs的方式：</p>
-<p>使用Homebrew安装：</p>
-<p>​    <code>$ brew install nvm</code></p>
-<p>​    <code>$ mkdir ~/.nvm</code>    </p>
-<p>​    <code>$ export NVM_DIR=~/.nvm</code></p>
-<p>​    <code>$ .$(brew --prefix nvm)/nvm.sh</code></p>
-<p>使用curl安装：</p>
-<p>​    <code>$ curl https://raw.github.com/creationix/nvm/master/install.sh | sh</code></p>
-<p>安装完成后需要重启终端并执行<code>$ nvm install 4</code></p>
-<h5 id="3-安装Hexo-需在以上两部完成的基础上安装"><a href="#3-安装Hexo-需在以上两部完成的基础上安装" class="headerlink" title="3.安装Hexo(需在以上两部完成的基础上安装)"></a>3.安装Hexo(需在以上两部完成的基础上安装)</h5><p><code>$ sudo npm install hexo-cli -g</code></p>
-<h4 id="创建GitHub仓库"><a href="#创建GitHub仓库" class="headerlink" title="创建GitHub仓库"></a>创建GitHub仓库</h4><h5 id="1-生成SSH公钥"><a href="#1-生成SSH公钥" class="headerlink" title="1.生成SSH公钥"></a>1.生成SSH公钥</h5><ol>
-<li><p>执行：</p>
-<p><code>cd ~/.ssh</code></p>
-<p>如果返回“… No such file or directory”，说明没有生成过SSH Key，进入第2步。否则说明已有公钥，不需要再次生成。</p>
-</li>
-<li><p>生成新的Key：（引号内的内容替换为你自己的邮箱）</p>
-<p><code>ssh-keygen -t rsa -C &quot;your_email@youremail.com&quot;</code></p>
-<p>输出显示：</p>
-<blockquote>
-<p>Generating public/private rsa key pair. Enter file in which to save the key<br>(/Users/your_user_directory/.ssh/id_rsa):<press enter=""></press></p>
-</blockquote>
-<p>直接回车，不要修改默认路劲。</p>
-<blockquote>
-<p>Generating public/private rsa key pair. Enter file in which to save the key<br>(/Users/your_user_directory/.ssh/id_rsa):<press enter=""></press></p>
-</blockquote>
-<p>设置一个密码短语，在每次远程操作之前会要求输入密码短语！闲麻烦可以直接回车，不设置。</p>
-<p>成功后显示：</p>
-<blockquote>
-<p>Your identification has been saved in /Users/your_user_directory/.ssh/id_rsa. Your public key has been saved in /Users/your_user_directory/.ssh/id_rsa.pub. The key fingerprint is: … …</p>
-</blockquote>
-</li>
-<li><p>提交公钥：</p>
-<p>​1.找到.ssh文件夹，vim打开“id_rsa.pub”文件，复制内容到剪贴板。</p>
-<p>​2登陆自己的GitHub后，进入Settings-&gt;SSH and GpG keys，点击 New SSH Key，粘贴进去保存即可。</p>
-</li>
-</ol>
-<h5 id="2-新建仓库，仓库名为username-github-io"><a href="#2-新建仓库，仓库名为username-github-io" class="headerlink" title="2.新建仓库，仓库名为username.github.io"></a>2.新建仓库，仓库名为username.github.io</h5><h4 id="建站"><a href="#建站" class="headerlink" title="建站"></a>建站</h4><h5 id="1-创建自己的网站"><a href="#1-创建自己的网站" class="headerlink" title="1.创建自己的网站"></a>1.创建自己的网站</h5><p><code>$ hexo init username.github.io</code></p>
-<p><code>$ cd username.github.io</code></p>
-<p><code>$ npm install</code></p>
-<p>新建完成后可以看到username.github.io下有：</p>
-<p><img src="/images/hexo_dir.png" alt="hexo_dir"></p>
-<p>_config.yml: 网站的配置信息，可以在此配置大部分的参数。</p>
-<p>package.json: 应用程序的信息。</p>
-<p>scaffolds: 模版文件夹。新建文章时，Hexo 会根据 scaffold 来建立文件。</p>
-<p>source: 资源文件夹是存放用户资源的地方。除 <code>_posts</code> 文件夹之外，开头命名为 <code>_</code> (下划线)的文件 / 文件夹和隐藏的文件将会被忽略。Markdown 和 HTML 文件会被解析并放到 <code>public</code> 文件夹，而其他文件会被拷贝过去。</p>
-<p>themes: 主题文件夹。Hexo 会根据主题来生成静态页面。</p>
-<h5 id="2-更改配置"><a href="#2-更改配置" class="headerlink" title="2.更改配置"></a>2.更改配置</h5><p>打开位于～/.username.github.io下的_congif.yml文件，修改以下配置项：</p>
-<p>title: xxx.      //你博客的名字</p>
-<p>author: xxx. //你的名字</p>
-<p>language: zh-Hans    //语言 中文</p>
-<p>theme: xxx  //主题名称</p>
-<p>type: git    //使用Git 发布</p>
-<p>repo: <a href="https://github.com/username/username.github.io.git" target="_blank" rel="noopener">https://github.com/username/username.github.io.git</a>    // 刚创建的Github仓库</p>
-<h4 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h4><h5 id="1-新建文章"><a href="#1-新建文章" class="headerlink" title="1.新建文章"></a>1.新建文章</h5><p><code>$ hexo new [layout] &lt;title&gt;</code></p>
-<p>新建的文章为markdown文件，将会保存在source/_posts下，用你喜欢的markdown编辑器写文章吧！</p>
-<h5 id="2-预览"><a href="#2-预览" class="headerlink" title="2.预览"></a>2.预览</h5><p><code>$ hexo s</code></p>
-<p>启动服务器，网站会在 <code>http://localhost:4000</code> 下启动，可通过该地址预览网站。在服务器启动期间，Hexo 会监视文件变动并自动更新，无须重启服务器。</p>
-<h5 id="3-安装自动部署发布工具"><a href="#3-安装自动部署发布工具" class="headerlink" title="3.安装自动部署发布工具"></a>3.安装自动部署发布工具</h5><p><code>$ npm install hexo-deployer-git —save</code></p>
-<h5 id="4-发布"><a href="#4-发布" class="headerlink" title="4.发布"></a>4.发布</h5><p><code>$ hexo clean   //清楚缓存文件(db.json)和已生成的静态文件(public)</code></p>
-<p><code>$ hexo g   //生成静态文件</code></p>
-<p><code>$ hexo d   //部署网站</code></p>
-<p>现在去 <a href="https://username.github.io" target="_blank" rel="noopener">https://username.github.io</a> 查看自己的博客吧～～</p>
-
+        
+          <a class="article-more-a" href="/2018/02/17/Hexo-Github搭建博客/#more">more >></a>
+        
       
 
       
@@ -1012,6 +814,17 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 	<div class="article-category tagcloud">
 		<i class="icon-book icon"></i>
@@ -1140,6 +953,30 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
             <input type="checkbox" q-on="click:toggleTag(e)" q-attr="checked:showTags">
           </label>
           <ul class="article-tag-list" q-show="showTags">
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">以太坊</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">区块链</a>
+              </li>
             
             <div class="clearfix"></div>
           </ul>
