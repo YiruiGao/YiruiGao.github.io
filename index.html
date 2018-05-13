@@ -134,6 +134,98 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-区块链3-0架构：超越货币、金融的区块链应用" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/13/区块链3-0架构：超越货币、金融的区块链应用/">区块链3.0架构：超越货币、金融的区块链应用</a>
+    </h1>
+  
+
+        
+        <a href="/2018/05/13/区块链3-0架构：超越货币、金融的区块链应用/" class="archive-article-date">
+  	<time datetime="2018-05-13T14:57:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-13</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>区块链3.0架构是分布式架构，但可以不是完全区中心化的，最有可能是在不同场景下的混合结构，比如在特别需要消费者参与共识过程的环境下可能用区中心化的架构；而在很多企业使用场景，可能用半中心化（例如联盟链）或部分中心化（例如私有链）。</p>
+<h5 id="基本架构："><a href="#基本架构：" class="headerlink" title="基本架构："></a>基本架构：</h5><p><img src="/img/3.0.jpg" alt="3.0"></p>
+<h5 id="典型应用场景："><a href="#典型应用场景：" class="headerlink" title="典型应用场景："></a>典型应用场景：</h5><ul>
+<li>自动化采购</li>
+<li>智能化物联网应用</li>
+<li>供应链自动化管理</li>
+<li>虚拟资产兑换、转移</li>
+<li>产权登记</li>
+</ul>
+<h5 id="互联链架构剖析："><a href="#互联链架构剖析：" class="headerlink" title="互联链架构剖析："></a>互联链架构剖析：</h5><p>互联链是实现不同区块链互联互通的统一架构和标准协议。</p>
+<p>互联账本不单包含了在以区块链为基础的账本之间的互联互通，也包含了多种账本（传统账本、区块链账本）之间的互联互通。</p>
+<p>互联账本协议组：</p>
+<p>每层只与邻层交互，不会跨层通信。</p>
+<ul>
+<li>账本层：为了支持账户间的转账，账本必须实现一些API和协议，称为账本层。这一层会有很多不同的协议，每种账本会对应一种协议。</li>
+<li>互联账本层：保证不同的连接器能互相操作，共同完成交易的路由。</li>
+<li>传输层：负责协调不同的转账交易，使它们能进行跨账本转账的交易。转账的安全性取决于采用的传输协议。</li>
+<li>应用层：负责谈判支付的以下关键属性：源账户、目标账户、金额、条件，当这些属性都定下来之后，就会调用传输层协议进行支付。</li>
+</ul>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">区块链</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/05/13/区块链3-0架构：超越货币、金融的区块链应用/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-vim实现函数跳转Ctags+TagList+Cscope" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -285,6 +377,10 @@
       
         <p>区块链2.0架构把区块链作为一UTXO个可编程的分布式信用基础设施，支持智能合约应用。</p>
 <ul>
+<li>基本架构：</li>
+</ul>
+<p><img src="/img/2.0.jpg" alt="2.0"></p>
+<ul>
 <li><p>账户设计：</p>
 <p>比特币没有账户的概念，每个用户的余额都是从他们在区块链上的UTXO计算出来的。以太坊的设计是将区块链作为一个通用的管理对象状态转换的去中心化平台，账户就是有状态的对象。外部账户的状态就是余额，而合约账户的状态可以是余额、代码执行情况，以及合约的存储。以太坊网络的状态就是所有账户的状态，该状态由每个区块的交易来更新，同时须在全网形成共识。</p>
         
@@ -362,7 +458,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h5 id="比特币前端："><a href="#比特币前端：" class="headerlink" title="比特币前端："></a>比特币前端：</h5><ul>
+        <h5 id="基本架构："><a href="#基本架构：" class="headerlink" title="基本架构："></a>基本架构：</h5><p><img src="/img/1.0.jpg" alt="1.0"></p>
+<h5 id="比特币前端："><a href="#比特币前端：" class="headerlink" title="比特币前端："></a>比特币前端：</h5><ul>
 <li>钱包：保存用户私钥，管理用户余额，提供交易功能。<ul>
 <li>非决定性钱包：直接保存私钥，私钥数据保存在Berkeley DB中;</li>
 <li>决定性钱包：保存私钥种子，用私钥种子生成私钥。</li>
@@ -911,94 +1008,10 @@
 
 
   
-    <article id="post-Hexo-Github搭建博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/02/17/Hexo-Github搭建博客/">Hexo+Github搭建博客</a>
-    </h1>
-  
-
-        
-        <a href="/2018/02/17/Hexo-Github搭建博客/" class="archive-article-date">
-  	<time datetime="2018-02-17T04:44:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-17</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h4 id="准备工作："><a href="#准备工作：" class="headerlink" title="准备工作："></a>准备工作：</h4><h5 id="1-安装git"><a href="#1-安装git" class="headerlink" title="1.安装git"></a>1.安装git</h5><p><code>$ brew install git   //需要首先安装HomeBrew</code></p>
-<h5 id="2-安装Nodejs"><a href="#2-安装Nodejs" class="headerlink" title="2.安装Nodejs"></a>2.安装Nodejs</h5><p>Node.js 是一个用Chrome’s V8 JavaScript engine 构建的 JavaScript 运行时框架。NPM的全称是Node Package Manager，是Nodejs的包管理器。</p>
-        
-          <a class="article-more-a" href="/2018/02/17/Hexo-Github搭建博客/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/hexo//" class="article-tag-list-link color5">hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/02/17/Hexo-Github搭建博客/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
   
 
 
@@ -1084,15 +1097,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">linux</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1104,11 +1117,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">区块链</a>
+                <a href="javascript:void(0)" class="js-tag color4">以太坊</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">以太坊</a>
+                <a href="javascript:void(0)" class="js-tag color4">区块链</a>
               </li>
             
             <div class="clearfix"></div>
