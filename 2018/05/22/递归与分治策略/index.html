@@ -6,22 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>以太坊 | Iris&#39;s Blog</title>
+  <title>递归与分治策略 | Iris&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="以太坊是智能合约的完整解决方案，被设计成了一个通用的区中心化平台，拥有一套完整的、可扩展其功能的工具。">
-<meta name="keywords" content="以太坊">
+  <meta name="description" content="算法设计模式：">
+<meta name="keywords" content="算法">
 <meta property="og:type" content="article">
-<meta property="og:title" content="以太坊">
-<meta property="og:url" content="http://yoursite.com/2018/05/05/以太坊/index.html">
+<meta property="og:title" content="递归与分治策略">
+<meta property="og:url" content="http://yoursite.com/2018/05/22/递归与分治策略/index.html">
 <meta property="og:site_name" content="Iris&#39;s Blog">
-<meta property="og:description" content="以太坊是智能合约的完整解决方案，被设计成了一个通用的区中心化平台，拥有一套完整的、可扩展其功能的工具。">
+<meta property="og:description" content="算法设计模式：">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/img/810542-20170509211714863-1437264347.jpg">
-<meta property="og:updated_time" content="2018-05-18T05:22:20.597Z">
+<meta property="og:image" content="http://yoursite.com/img/公式1.png">
+<meta property="og:image" content="http://yoursite.com/img/公式2.png">
+<meta property="og:image" content="http://yoursite.com/img/公式3.png">
+<meta property="og:updated_time" content="2018-05-22T15:46:45.346Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="以太坊">
-<meta name="twitter:description" content="以太坊是智能合约的完整解决方案，被设计成了一个通用的区中心化平台，拥有一套完整的、可扩展其功能的工具。">
-<meta name="twitter:image" content="http://yoursite.com/img/810542-20170509211714863-1437264347.jpg">
+<meta name="twitter:title" content="递归与分治策略">
+<meta name="twitter:description" content="算法设计模式：">
+<meta name="twitter:image" content="http://yoursite.com/img/公式1.png">
   
     <link rel="alternative" href="/atom.xml" title="Iris&#39;s Blog" type="application/atom+xml">
   
@@ -139,69 +141,48 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-以太坊" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-递归与分治策略" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      以太坊
+      递归与分治策略
     </h1>
   
 
         
-        <a href="/2018/05/05/以太坊/" class="archive-article-date">
-  	<time datetime="2018-05-05T15:54:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-05</time>
+        <a href="/2018/05/22/递归与分治策略/" class="archive-article-date">
+  	<time datetime="2018-05-22T14:28:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-22</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>以太坊是智能合约的完整解决方案，被设计成了一个通用的区中心化平台，拥有一套完整的、可扩展其功能的工具。<a id="more"></a></p>
-<p><img src="/img/810542-20170509211714863-1437264347.jpg" alt="img"></p>
-<h5 id="以太坊的核心概念："><a href="#以太坊的核心概念：" class="headerlink" title="以太坊的核心概念："></a>以太坊的核心概念：</h5><ul>
-<li><p>以太坊虚拟机（EVM）：</p>
-<p>智能合约的运行环境。</p>
-</li>
-<li><p>账户：</p>
-<p>以太坊有两类账户，它们共用一个地址空间。以太坊的账户包含四部分，随机数，用于确定每笔交易只能被处理一次；账户目前的以太币余额；账户的合约代码；账户的存储（默认为空）。</p>
-<p>在必特币上，由于只有UTXO而没有账户的概念，需要导入区块链数据库，解析所有交易，抽取出某个用户的交易情况。而以太坊可以在实时的区块链上，根据一个地址实时查看当前账户情况和交易状态。</p>
+        <h5 id="算法设计模式："><a href="#算法设计模式：" class="headerlink" title="算法设计模式："></a>算法设计模式：<a id="more"></a></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">divide-and-conquer(P)&#123;</span><br><span class="line">    if(|P|&lt;=n0) adhoc(P);   //adhoc(P)用于直接解小规模P</span><br><span class="line">    divide P into smaller subinstances P1,P2,...Pk;</span><br><span class="line">    for(i=1;i&lt;=k;i++)&#123;</span><br><span class="line">        yi = divide-and-conquer(Pi);</span><br><span class="line">    &#125;</span><br><span class="line">    return merge(y1,y2,...yk);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="分治法效率："><a href="#分治法效率：" class="headerlink" title="分治法效率："></a>分治法效率：</h5><p>规模为|P|=n的问题所需时间：</p>
+<p><img src="/img/公式1.png" alt="公式1"></p>
+<h5 id="二分搜索："><a href="#二分搜索：" class="headerlink" title="二分搜索："></a>二分搜索：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">public static int binarySearch(int[] a, int x, int n)&#123;</span><br><span class="line">    int left=0; int right=n-1;</span><br><span class="line">    while(left&lt;=right)&#123;</span><br><span class="line">        int middle=(left+right)/2;</span><br><span class="line">        if(x==a[middle]) return middle;</span><br><span class="line">        if(x&gt;a[middle]) left=middle+1;</span><br><span class="line">        else right=middle-1;</span><br><span class="line">    &#125;</span><br><span class="line">    return -1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>每执行一次while循环，待搜索的数组大小减小一半，所以复杂度为O(logn)。</p>
+<h5 id="棋盘覆盖："><a href="#棋盘覆盖：" class="headerlink" title="棋盘覆盖："></a>棋盘覆盖：</h5><p>在一个2^k^*2^k^个方格组成的棋盘中，恰有一个特殊方格，用4种不同形态的L型骨牌覆盖除特殊方格以外的全部方格。</p>
 <ul>
-<li>外部账户：被私钥-公钥对控制，地址由公钥得到，可进行普通交易。</li>
-<li>合约账户：被存储在账户中的代码控制，地址由合约创建者的地址和该地址发出过的交易数量计算得到，每当合约账户收到一条消息，合约内部的代码就会被激活，允许它对内部存储进行读取、写入、发送其他消息和创建合约。</li>
+<li>k&gt;0时，将2^k^*2^k^棋盘分割为4个2^k^*2^k^子棋盘;</li>
+<li>特殊方格位于其中一个子期盘，其他三个不是特殊棋盘;</li>
+<li>用一个L型骨牌覆盖着三个非特殊棋盘的汇合处，变为4个特殊子期盘;</li>
+<li>递归分割，至1*1棋盘。</li>
 </ul>
+<p>设T(k)是chessboard覆盖一个2^k^*2^k^棋盘所需要的时间：</p>
+<p>​    <img src="/img/公式2.png" alt="公式2"></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">public void chessboard(int tr, int tc, int dr, int dc, int size)&#123;</span><br><span class="line">    if(size==1)return;</span><br><span class="line">    int t=tile++;  //L型骨牌号</span><br><span class="line">    	s=size/2;  //分割棋盘</span><br><span class="line">    if(dr&lt;tr+s &amp;&amp; dc&lt;tc+s)</span><br><span class="line">    	chessboard(tr, tc, dr, dc, s);  //特殊方格在此子棋盘中</span><br><span class="line">    else&#123; //此子期盘中无特殊方格，用L型骨牌覆盖</span><br><span class="line">        board[tr+s-1][tc+s-1]=t;</span><br><span class="line">        chessboard(tr, tc, tr+s-1, tc+s-1, s);</span><br><span class="line">    &#125;</span><br><span class="line">    ...   //对其余三个子期盘进行同样的处理</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="合并排序："><a href="#合并排序：" class="headerlink" title="合并排序："></a>合并排序：</h5><ul>
+<li><p>递归方式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public void mergeSort(Comparable a[], int left, int right)&#123;</span><br><span class="line">    if(left&lt;right)&#123;</span><br><span class="line">        int i=(left+right)/2;</span><br><span class="line">        mergeSort(a, left, i);</span><br><span class="line">        mergeSort(a, i+1, right);</span><br><span class="line">        merge(a, b, left, i, right);   //合并到数组b</span><br><span class="line">        copy(a, b, left, right);    //复制回数组a</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><img src="/img/公式3.png" alt="公式3"></p>
 </li>
-<li><p>消息：</p>
-<p>类似于比特币的交易，不同点有：可以由合约创建账户；可以包含数据；若接收方为合约账户，可以对消息进行回应。</p>
-</li>
-<li><p>交易：</p>
-<p>指从外部账户发出的消息的签名数据包。包含接收者、签名、帐户余额、要发送的数据、STAETGAS（对计算步骤做限制）、GASPRICE（每一计算步骤需要支付矿工的燃料的价格）。</p>
-</li>
-<li><p>存储、主存、栈：</p>
-<p>存储：每个账户都有一块永久的内存区域，称为存储。</p>
-<p>主存：合约执行每次消息调用时都有一块新的被清除过的主存。</p>
-<p>栈：EVM是基于栈的，即所有计算都在一个栈的区域内执行。</p>
-</li>
-<li><p>指令集：</p>
-<p>具备常用的算数、位、逻辑和比较操作，也可以进行条件和无条件跳转。</p>
-</li>
-<li><p>消息调用：</p>
-<p>合约可以通过消息调用的方式来调用其他合约，或者发送以太币到非合约账户。每个交易都可以被认为时一个顶层消息调用，这个消息调用会一次产生更多的消息调用。</p>
-</li>
-<li><p>代码调用和库：</p>
-<p>特殊的消息调用（callcode），加载来自目标地址的代码，使得solidity可以实现“库”。</p>
-</li>
-</ul>
-<h5 id="以太坊的状态转换："><a href="#以太坊的状态转换：" class="headerlink" title="以太坊的状态转换："></a>以太坊的状态转换：</h5><p>当EVM运行的时候，它的完整状态计算可以由元组（block_state,transaction,message,code,memory,stack,pc,gas）来定义，每个指令如何影响元组都有定义。</p>
-<ul>
-<li>检查交易格式、签名、随机数是否与发送者账户的随机数匹配。</li>
-<li>从发送者账户减去交易费用fee=STARTGAS*GASPRICE，增加发送者账户的随机数。</li>
-<li>设定初值Gas=STARTGAS，并根据交易中的字节数减去一定量的燃料。</li>
-<li>从发送者账户转移价值到接收者账户。若接受账户不存在，创建此帐户。若接受账户是合约，运行合约代码。</li>
-<li>价值转移失败，仍需支付交易费用给矿工。</li>
-<li>价值转移成功，多余燃料还给发送者。</li>
+<li><p>非递归形式：自然和并排序</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">public void mergeSort(Comparable[] a)&#123;</span><br><span class="line">    Comparable[] b = new Comparable[a.length];</span><br><span class="line">    int s=1;  //步长</span><br><span class="line">    while(s&lt;a.length)&#123;</span><br><span class="line">        mergePass(a, b, s);      //合并倒数组b</span><br><span class="line">        s+=s;</span><br><span class="line">        mergePass(b, a, s);      //合并倒数组a</span><br><span class="line">        s+=s;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//用于合并排好序的相邻数组段</span><br><span class="line">public void mergePass(Comparable[] x, Comparable[] y, int s)&#123;</span><br><span class="line">    int i=0;</span><br><span class="line">    while(i&lt;=x.length-2*s)&#123;</span><br><span class="line">        merge(x, y, i, i+s-1, i+2*s-1);</span><br><span class="line">        i=i+2*s;</span><br><span class="line">    &#125;</span><br><span class="line">    if(i+s&lt;x.length)</span><br><span class="line">    	merge(x, y, i, i+s-1, x.length-1);</span><br><span class="line">    else</span><br><span class="line">    	for(int j=i;j&lt;x.length;j++)</span><br><span class="line">    		y[j]=x[j];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public void merge(Comparable[] c, Comparable[] d, int l, int m, int r)&#123;//合并c[l:m]和c[m+1:r]到d[l:r]</span><br><span class="line">    int i=l, j=m+1, k=l;</span><br><span class="line">    while((i&lt;=m) &amp;&amp; (j&lt;=r))&#123;</span><br><span class="line">        if(c[i].compareTo(c[j])&lt;=0)</span><br><span class="line">        	d[k++]=c[i++];</span><br><span class="line">        else</span><br><span class="line">        	d[k++]=c[j++];</span><br><span class="line">    &#125;</span><br><span class="line">    if(i&gt;m)</span><br><span class="line">        for(int q=j;q&lt;=r;q++) d[k++]=c[q];</span><br><span class="line">    else</span><br><span class="line">        for(int q=i;q&lt;=m;q++) d[k++]=c[q];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
 </ul>
 
       
@@ -216,7 +197,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">以太坊</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
         		</li>
       		
 		</ul>
@@ -272,7 +253,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/05/05/以太坊/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/05/22/递归与分治策略/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -286,18 +267,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2018/05/07/区块链1-0架构：比特币区块链/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          区块链1.0架构：比特币区块链
-        
-      </div>
-    </a>
   
-  
-    <a href="/2018/05/05/区块链运作的核心技术/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">区块链运作的核心技术</div>
+    <a href="/2018/05/15/区块链常见问题/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">区块链常见问题</div>
       <i class="icon-circle-right"></i>
     </a>
   
