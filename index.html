@@ -134,6 +134,88 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-动态规划" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2018/05/27/动态规划/">动态规划</a>
+    </h1>
+  
+
+        
+        <a href="/2018/05/27/动态规划/" class="archive-article-date">
+  	<time datetime="2018-05-27T15:48:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-27</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="动态规划算法的基本要素："><a href="#动态规划算法的基本要素：" class="headerlink" title="动态规划算法的基本要素："></a>动态规划算法的基本要素：</h5><ul>
+<li>最优子结构：问题的最优解包含子问题的最优解。</li>
+<li>重叠子问题：递归求解时，子问题被重复计算多次。</li>
+</ul>
+<h5 id="分治与动态规划的区别："><a href="#分治与动态规划的区别：" class="headerlink" title="分治与动态规划的区别："></a>分治与动态规划的区别：</h5><ul>
+<li>分治是<strong>自顶向下</strong>求解，求n的最优解时，并不能立即确定最优解，所以并不是只求n/2的最优解（二分思想）就行了，需要做许多子弟向上尝试，而每一次尝试都需要进行一次递归，导致规模较小的子问题多次重复计算。</li>
+<li>动态规划是<strong>自底向上</strong>求解，将所有子问题的解都记下来，求更高层问题的最优解时只需遍历它的子问题的最优解。</li>
+</ul>
+<h5 id="备忘录方法："><a href="#备忘录方法：" class="headerlink" title="备忘录方法："></a>备忘录方法：</h5><p>自顶向下的动态规划，与递归结构相同，但会在求解过程中记录子问题的解，用时差表，若已有解则直接使用，还没求解就求解并记录到表中。复杂度与动态规划相同。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2018/05/27/动态规划/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-递归与分治策略" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -802,81 +884,6 @@
 
 
   
-    <article id="post-Ubuntu的环境变量" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/03/15/Ubuntu的环境变量/">Ubuntu的环境变量</a>
-    </h1>
-  
-
-        
-        <a href="/2018/03/15/Ubuntu的环境变量/" class="archive-article-date">
-  	<time datetime="2018-03-15T11:21:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-15</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h5 id="什么是环境变量？"><a href="#什么是环境变量？" class="headerlink" title="什么是环境变量？"></a>什么是环境变量？</h5><p>当我们在命令行输入命令，系统会按照环境变量的设置，去相应的路径下查找这个命令的可执行文件，所以你不需要在执行某个命令之前进入到它所在的路径，环境变量都帮你记录啦～</p>
-<p>Linux是一个多用户多任务的操作系统，每个用户都可以配置自己的环境变量，当然，也有全局环境变量可以为所有用户进行配置。所以，环境变量可以分为系统环境变量和用户环境变量。</p>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">ubuntu</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/03/15/Ubuntu的环境变量/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -966,10 +973,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">linux</a>
               </li>
              
@@ -990,11 +993,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">区块链</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">算法</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
             
             <div class="clearfix"></div>

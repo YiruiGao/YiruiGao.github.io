@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | Iris&#39;s Blog</title>
+  <title>动态规划 | Iris&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Iris&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/archives/page/2/index.html">
+  <meta name="description" content="动态规划算法的基本要素： 最优子结构：问题的最优解包含子问题的最优解。 重叠子问题：递归求解时，子问题被重复计算多次。  分治与动态规划的区别： 分治是自顶向下求解，求n的最优解时，并不能立即确定最优解，所以并不是只求n/2的最优解（二分思想）就行了，需要做许多子弟向上尝试，而每一次尝试都需要进行一次递归，导致规模较小的子问题多次重复计算。 动态规划是自底向上求解，将所有子问题的解都记下来，求更高">
+<meta name="keywords" content="算法">
+<meta property="og:type" content="article">
+<meta property="og:title" content="动态规划">
+<meta property="og:url" content="http://yoursite.com/2018/05/27/动态规划/index.html">
 <meta property="og:site_name" content="Iris&#39;s Blog">
+<meta property="og:description" content="动态规划算法的基本要素： 最优子结构：问题的最优解包含子问题的最优解。 重叠子问题：递归求解时，子问题被重复计算多次。  分治与动态规划的区别： 分治是自顶向下求解，求n的最优解时，并不能立即确定最优解，所以并不是只求n/2的最优解（二分思想）就行了，需要做许多子弟向上尝试，而每一次尝试都需要进行一次递归，导致规模较小的子问题多次重复计算。 动态规划是自底向上求解，将所有子问题的解都记下来，求更高">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-05-27T15:49:39.758Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Iris&#39;s Blog">
+<meta name="twitter:title" content="动态规划">
+<meta name="twitter:description" content="动态规划算法的基本要素： 最优子结构：问题的最优解包含子问题的最优解。 重叠子问题：递归求解时，子问题被重复计算多次。  分治与动态规划的区别： 分治是自顶向下求解，求n的最优解时，并不能立即确定最优解，所以并不是只求n/2的最优解（二分思想）就行了，需要做许多子弟向上尝试，而每一次尝试都需要进行一次递归，导致规模较小的子问题多次重复计算。 动态规划是自底向上求解，将所有子问题的解都记下来，求更高">
   
     <link rel="alternative" href="/atom.xml" title="Iris&#39;s Blog" type="application/atom+xml">
   
@@ -132,210 +137,153 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-动态规划" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      动态规划
+    </h1>
+  
+
+        
+        <a href="/2018/05/27/动态规划/" class="archive-article-date">
+  	<time datetime="2018-05-27T15:48:46.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-05-27</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h5 id="动态规划算法的基本要素："><a href="#动态规划算法的基本要素：" class="headerlink" title="动态规划算法的基本要素："></a>动态规划算法的基本要素：</h5><ul>
+<li>最优子结构：问题的最优解包含子问题的最优解。</li>
+<li>重叠子问题：递归求解时，子问题被重复计算多次。</li>
+</ul>
+<h5 id="分治与动态规划的区别："><a href="#分治与动态规划的区别：" class="headerlink" title="分治与动态规划的区别："></a>分治与动态规划的区别：</h5><ul>
+<li>分治是<strong>自顶向下</strong>求解，求n的最优解时，并不能立即确定最优解，所以并不是只求n/2的最优解（二分思想）就行了，需要做许多子弟向上尝试，而每一次尝试都需要进行一次递归，导致规模较小的子问题多次重复计算。</li>
+<li>动态规划是<strong>自底向上</strong>求解，将所有子问题的解都记下来，求更高层问题的最优解时只需遍历它的子问题的最优解。</li>
+</ul>
+<h5 id="备忘录方法："><a href="#备忘录方法：" class="headerlink" title="备忘录方法："></a>备忘录方法：</h5><p>自顶向下的动态规划，与递归结构相同，但会在求解过程中记录子问题的解，用时差表，若已有解则直接使用，还没求解就求解并记录到表中。复杂度与动态规划相同。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/15/Ubuntu的环境变量/" class="archive-article-date">
-  	<time datetime="2018-03-15T11:21:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-15</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/15/Ubuntu的环境变量/">Ubuntu的环境变量</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">ubuntu</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">算法</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/05/27/动态规划/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/12/Linux下查找文件的几种方式/" class="archive-article-date">
-  	<time datetime="2018-03-12T07:45:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-12</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/05/22/递归与分治策略/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">递归与分治策略</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/12/Linux下查找文件的几种方式/">Linux下查找文件的几种方式</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/linux//" class="article-tag-list-link color1">linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+        
+    </div>
+</aside>
 
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/03/07/git基础-常用命令/" class="archive-article-date">
-  	<time datetime="2018-03-07T08:00:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-03-07</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/03/07/git基础-常用命令/">git基础 --常用命令</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/git//" class="article-tag-list-link color4">git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/02/17/Hexo-Github搭建博客/" class="archive-article-date">
-  	<time datetime="2018-02-17T04:44:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-02-17</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/02/17/Hexo-Github搭建博客/">Hexo+Github搭建博客</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/hexo//" class="article-tag-list-link color5">hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
   
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/">&laquo; Prev</a><a class="page-number" href="/archives/">1</a><span class="page-number current">2</span>
-    </nav>
+  
+
+  
+
   
 
 
@@ -359,8 +307,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
