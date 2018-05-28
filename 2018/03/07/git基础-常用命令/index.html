@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>git基础 --常用命令 | Iris&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.创建一个版本库1234$ mkdir learngit$ cd learngit$ pwd/Users/michael/learngit">
+  <meta name="description" content="¶1.创建一个版本库 1234$ mkdir learngit$ cd learngit$ pwd/Users/michael/learngit">
 <meta name="keywords" content="git">
 <meta property="og:type" content="article">
 <meta property="og:title" content="git基础 --常用命令">
 <meta property="og:url" content="http://yoursite.com/2018/03/07/git基础-常用命令/index.html">
 <meta property="og:site_name" content="Iris&#39;s Blog">
-<meta property="og:description" content="1.创建一个版本库1234$ mkdir learngit$ cd learngit$ pwd/Users/michael/learngit">
+<meta property="og:description" content="¶1.创建一个版本库 1234$ mkdir learngit$ cd learngit$ pwd/Users/michael/learngit">
 <meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2018-05-09T15:36:18.745Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git基础 --常用命令">
-<meta name="twitter:description" content="1.创建一个版本库1234$ mkdir learngit$ cd learngit$ pwd/Users/michael/learngit">
+<meta name="twitter:description" content="¶1.创建一个版本库 1234$ mkdir learngit$ cd learngit$ pwd/Users/michael/learngit">
   
     <link rel="alternative" href="/atom.xml" title="Iris&#39;s Blog" type="application/atom+xml">
   
@@ -157,35 +157,46 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h5 id="1-创建一个版本库"><a href="#1-创建一个版本库" class="headerlink" title="1.创建一个版本库"></a>1.创建一个版本库</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir learngit</span><br><span class="line">$ cd learngit</span><br><span class="line">$ pwd</span><br><span class="line">/Users/michael/learngit</span><br></pre></td></tr></table></figure>
+        <h5 id="1-创建一个版本库"><a class="header-anchor" href="#1-创建一个版本库">¶</a>1.创建一个版本库</h5>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir learngit</span><br><span class="line">$ cd learngit</span><br><span class="line">$ pwd</span><br><span class="line">/Users/michael/learngit</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<h5 id="2-通过git-init命令把这个目录变成Git可以管理的仓库"><a href="#2-通过git-init命令把这个目录变成Git可以管理的仓库" class="headerlink" title="2.通过git init命令把这个目录变成Git可以管理的仓库"></a>2.通过<code>git init</code>命令把这个目录变成Git可以管理的仓库</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git init</span><br><span class="line">Initialized empty Git repository in /Users/michael/learngit/.git/</span><br></pre></td></tr></table></figure>
-<h5 id="3-把一个文件放到Git仓库"><a href="#3-把一个文件放到Git仓库" class="headerlink" title="3.把一个文件放到Git仓库"></a>3.把一个文件放到Git仓库</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ git add readme.txt           #readme.txt要放在learngit下</span><br><span class="line">$ git commit -m &quot;wrote a readme file&quot;               #提交到仓库中，可以多次add,一次commit</span><br><span class="line">[master (root-commit) cb926e7] wrote a readme file</span><br><span class="line"> 1 file changed, 2 insertions(+)</span><br><span class="line"> create mode 100644 readme.txt</span><br></pre></td></tr></table></figure>
-<h5 id="4-查看git仓库当前状态"><a href="#4-查看git仓库当前状态" class="headerlink" title="4.查看git仓库当前状态"></a>4.查看git仓库当前状态</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ git status</span><br><span class="line"># On branch master</span><br><span class="line"># Changes not staged for commit:</span><br><span class="line">#   (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)</span><br><span class="line">#   (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)</span><br><span class="line">#</span><br><span class="line">#    modified:   readme.txt</span><br><span class="line">#</span><br><span class="line">no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)</span><br></pre></td></tr></table></figure>
-<h5 id="5-查看文件被修改的内容"><a href="#5-查看文件被修改的内容" class="headerlink" title="5.查看文件被修改的内容"></a>5.查看文件被修改的内容</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$ git diff readme.txt </span><br><span class="line">diff --git a/readme.txt b/readme.txt</span><br><span class="line">index 46d49bf..9247db6 100644</span><br><span class="line">--- a/readme.txt</span><br><span class="line">+++ b/readme.txt</span><br><span class="line">@@ -1,2 +1,2 @@</span><br><span class="line">-Git is a version control system.</span><br><span class="line">+Git is a distributed version control system.</span><br><span class="line"> Git is free software.</span><br><span class="line"> </span><br><span class="line">$git diff HEAD -- readme.txt命令可以查看工作区和版本库里面最新版本的区别</span><br></pre></td></tr></table></figure>
-<h5 id="6-显示从最近到最远的提交日志"><a href="#6-显示从最近到最远的提交日志" class="headerlink" title="6.显示从最近到最远的提交日志"></a>6.显示从最近到最远的提交日志</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ git log   #--pretty=oneline改变输出格式</span><br><span class="line">commit 3628164fb26d48395383f8f31179f24e0882e1e0</span><br><span class="line">Author: Michael Liao &lt;askxuefeng@gmail.com&gt;</span><br><span class="line">Date:   Tue Aug 20 15:11:49 2013 +0800</span><br><span class="line"></span><br><span class="line">    append GPL</span><br></pre></td></tr></table></figure>
-<h5 id="7-版本回退与撤销回退"><a href="#7-版本回退与撤销回退" class="headerlink" title="7.版本回退与撤销回退"></a>7.版本回退与撤销回退</h5><ul>
+<h5 id="2-通过git-init命令把这个目录变成git可以管理的仓库"><a class="header-anchor" href="#2-通过git-init命令把这个目录变成git可以管理的仓库">¶</a>2.通过<code>git init</code>命令把这个目录变成Git可以管理的仓库</h5>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ git init</span><br><span class="line">Initialized empty Git repository in /Users/michael/learngit/.git/</span><br></pre></td></tr></table></figure>
+<h5 id="3-把一个文件放到git仓库"><a class="header-anchor" href="#3-把一个文件放到git仓库">¶</a>3.把一个文件放到Git仓库</h5>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ git add readme.txt           #readme.txt要放在learngit下</span><br><span class="line">$ git commit -m &quot;wrote a readme file&quot;               #提交到仓库中，可以多次add,一次commit</span><br><span class="line">[master (root-commit) cb926e7] wrote a readme file</span><br><span class="line"> 1 file changed, 2 insertions(+)</span><br><span class="line"> create mode 100644 readme.txt</span><br></pre></td></tr></table></figure>
+<h5 id="4-查看git仓库当前状态"><a class="header-anchor" href="#4-查看git仓库当前状态">¶</a>4.查看git仓库当前状态</h5>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">$ git status</span><br><span class="line"># On branch master</span><br><span class="line"># Changes not staged for commit:</span><br><span class="line">#   (use &quot;git add &lt;file&gt;...&quot; to update what will be committed)</span><br><span class="line">#   (use &quot;git checkout -- &lt;file&gt;...&quot; to discard changes in working directory)</span><br><span class="line">#</span><br><span class="line">#    modified:   readme.txt</span><br><span class="line">#</span><br><span class="line">no changes added to commit (use &quot;git add&quot; and/or &quot;git commit -a&quot;)</span><br></pre></td></tr></table></figure>
+<h5 id="5-查看文件被修改的内容"><a class="header-anchor" href="#5-查看文件被修改的内容">¶</a>5.查看文件被修改的内容</h5>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">$ git diff readme.txt </span><br><span class="line">diff --git a/readme.txt b/readme.txt</span><br><span class="line">index 46d49bf..9247db6 100644</span><br><span class="line">--- a/readme.txt</span><br><span class="line">+++ b/readme.txt</span><br><span class="line">@@ -1,2 +1,2 @@</span><br><span class="line">-Git is a version control system.</span><br><span class="line">+Git is a distributed version control system.</span><br><span class="line"> Git is free software.</span><br><span class="line"> </span><br><span class="line">$git diff HEAD -- readme.txt命令可以查看工作区和版本库里面最新版本的区别</span><br></pre></td></tr></table></figure>
+<h5 id="6-显示从最近到最远的提交日志"><a class="header-anchor" href="#6-显示从最近到最远的提交日志">¶</a>6.显示从最近到最远的提交日志</h5>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ git log   #--pretty=oneline改变输出格式</span><br><span class="line">commit 3628164fb26d48395383f8f31179f24e0882e1e0</span><br><span class="line">Author: Michael Liao &lt;askxuefeng@gmail.com&gt;</span><br><span class="line">Date:   Tue Aug 20 15:11:49 2013 +0800</span><br><span class="line"></span><br><span class="line">    append GPL</span><br></pre></td></tr></table></figure>
+<h5 id="7-版本回退与撤销回退"><a class="header-anchor" href="#7-版本回退与撤销回退">¶</a>7.版本回退与撤销回退</h5>
+<ul>
 <li><code>HEAD</code>指向的版本是当前版本，Git允许在版本的历史之间穿梭，使用<code>git reset --hard commit_id</code>。</li>
 <li>穿梭前，用<code>git log</code>可以查看提交历史，以便确定要回退到哪个版本。</li>
 <li>要重返未来，用<code>git reflog</code>查看命令历史，以便确定要回到未来的哪个版本。</li>
 </ul>
-<h5 id="8-撤销修改"><a href="#8-撤销修改" class="headerlink" title="8.撤销修改"></a>8.撤销修改</h5><ul>
+<h5 id="8-撤销修改"><a class="header-anchor" href="#8-撤销修改">¶</a>8.撤销修改</h5>
+<ul>
 <li>想直接丢弃工作区的修改时，用命令<code>git checkout -- file</code></li>
 <li>已经添加到了暂存区时，想丢弃修改，分两步，第一步用命令<code>git reset HEAD file</code>，第二步用命令<code>git checkout -- file</code>。</li>
 <li>已经提交了不合适的修改到版本库时，想要撤销本次提交，使用版本回退方式，不过前提是没有推送到远程库。</li>
 </ul>
-<h5 id="9-删除文件"><a href="#9-删除文件" class="headerlink" title="9.删除文件"></a>9.删除文件</h5><ul>
+<h5 id="9-删除文件"><a class="header-anchor" href="#9-删除文件">¶</a>9.删除文件</h5>
+<ul>
 <li>命令<code>git rm</code>用于删除一个文件。如果一个文件已经被提交到版本库，那么你永远不用担心误删，但是要小心，你只能恢复文件到最新版本，你会丢失<strong>最近一次提交后你修改的内容</strong>。</li>
 <li><code>git rm</code>后要用<code>git commit</code>提交删除操作</li>
 <li><code>git rm</code>后想要撤销删除操作，用<code>git checkout --file</code></li>
 </ul>
-<h5 id="10-远程仓库"><a href="#10-远程仓库" class="headerlink" title="10.远程仓库"></a>10.远程仓库</h5><ul>
+<h5 id="10-远程仓库"><a class="header-anchor" href="#10-远程仓库">¶</a>10.远程仓库</h5>
+<ul>
 <li>要关联一个远程库，使用命令<code>git remote add origin git@server-name:path/repo-name.git</code>；</li>
 <li>关联后，使用命令<code>git push -u origin master</code>第一次推送master分支的所有内容</li>
 <li>此后，每次本地提交后，只要有必要，就可以使用命令<code>git push origin master</code>推送最新修改；</li>
 <li>要克隆一个仓库，首先必须知道仓库的地址，然后使用<code>git clone</code>命令克隆。</li>
 </ul>
-<h5 id="11-分支"><a href="#11-分支" class="headerlink" title="11.分支"></a>11.分支</h5><ul>
+<h5 id="11-分支"><a class="header-anchor" href="#11-分支">¶</a>11.分支</h5>
+<ul>
 <li>查看分支：<code>git branch</code></li>
 <li><code>git branch -r</code>：查看远程仓库的所有分支。</li>
 <li>创建分支：<code>git branch</code></li>
@@ -196,16 +207,19 @@
 <li>当Git无法自动合并分支时，就必须首先解决冲突。解决冲突后，再提交，合并完成。</li>
 <li>用<code>git log --graph</code>命令可以看到分支合并图。</li>
 </ul>
-<h5 id="12-Bug分支"><a href="#12-Bug分支" class="headerlink" title="12.Bug分支"></a>12.Bug分支</h5><ul>
+<h5 id="12-bug分支"><a class="header-anchor" href="#12-bug分支">¶</a>12.Bug分支</h5>
+<ul>
 <li>把当前工作现场“储藏”起来，等以后恢复现场后继续工作：<code>git stash</code>。</li>
 <li>查看当前分支下保存的stash：<code>git stash list</code>。</li>
-<li>恢复现场：<ul>
+<li>恢复现场：
+<ul>
 <li>一是用<code>git stash apply</code>恢复，但是恢复后，stash内容并不删除，你需要用<code>git stash drop</code>来删除；</li>
 <li>另一种方式是用<code>git stash pop</code>，恢复的同时把stash内容也删了。</li>
 </ul>
 </li>
 </ul>
-<h5 id="13-多人协作"><a href="#13-多人协作" class="headerlink" title="13.多人协作"></a>13.多人协作</h5><ul>
+<h5 id="13-多人协作"><a class="header-anchor" href="#13-多人协作">¶</a>13.多人协作</h5>
+<ul>
 <li>查看远程库信息，使用<code>git remote -v</code>；</li>
 <li>本地新建的分支如果不推送到远程，对其他人就是不可见的；</li>
 <li>从本地推送分支，使用<code>git push origin branch-name</code>，如果推送失败，先用<code>git pull</code>抓取远程的新提交；</li>
@@ -436,6 +450,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">linux</a>
               </li>
              
@@ -461,10 +479,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">区块链</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
             
             <div class="clearfix"></div>

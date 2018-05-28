@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Ubuntu的环境变量 | Iris&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="什么是环境变量？当我们在命令行输入命令，系统会按照环境变量的设置，去相应的路径下查找这个命令的可执行文件，所以你不需要在执行某个命令之前进入到它所在的路径，环境变量都帮你记录啦～ Linux是一个多用户多任务的操作系统，每个用户都可以配置自己的环境变量，当然，也有全局环境变量可以为所有用户进行配置。所以，环境变量可以分为系统环境变量和用户环境变量。">
+  <meta name="description" content="¶什么是环境变量？ 当我们在命令行输入命令，系统会按照环境变量的设置，去相应的路径下查找这个命令的可执行文件，所以你不需要在执行某个命令之前进入到它所在的路径，环境变量都帮你记录啦～ Linux是一个多用户多任务的操作系统，每个用户都可以配置自己的环境变量，当然，也有全局环境变量可以为所有用户进行配置。所以，环境变量可以分为系统环境变量和用户环境变量。">
 <meta name="keywords" content="ubuntu">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ubuntu的环境变量">
 <meta property="og:url" content="http://yoursite.com/2018/03/15/Ubuntu的环境变量/index.html">
 <meta property="og:site_name" content="Iris&#39;s Blog">
-<meta property="og:description" content="什么是环境变量？当我们在命令行输入命令，系统会按照环境变量的设置，去相应的路径下查找这个命令的可执行文件，所以你不需要在执行某个命令之前进入到它所在的路径，环境变量都帮你记录啦～ Linux是一个多用户多任务的操作系统，每个用户都可以配置自己的环境变量，当然，也有全局环境变量可以为所有用户进行配置。所以，环境变量可以分为系统环境变量和用户环境变量。">
+<meta property="og:description" content="¶什么是环境变量？ 当我们在命令行输入命令，系统会按照环境变量的设置，去相应的路径下查找这个命令的可执行文件，所以你不需要在执行某个命令之前进入到它所在的路径，环境变量都帮你记录啦～ Linux是一个多用户多任务的操作系统，每个用户都可以配置自己的环境变量，当然，也有全局环境变量可以为所有用户进行配置。所以，环境变量可以分为系统环境变量和用户环境变量。">
 <meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2018-05-09T15:38:19.349Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ubuntu的环境变量">
-<meta name="twitter:description" content="什么是环境变量？当我们在命令行输入命令，系统会按照环境变量的设置，去相应的路径下查找这个命令的可执行文件，所以你不需要在执行某个命令之前进入到它所在的路径，环境变量都帮你记录啦～ Linux是一个多用户多任务的操作系统，每个用户都可以配置自己的环境变量，当然，也有全局环境变量可以为所有用户进行配置。所以，环境变量可以分为系统环境变量和用户环境变量。">
+<meta name="twitter:description" content="¶什么是环境变量？ 当我们在命令行输入命令，系统会按照环境变量的设置，去相应的路径下查找这个命令的可执行文件，所以你不需要在执行某个命令之前进入到它所在的路径，环境变量都帮你记录啦～ Linux是一个多用户多任务的操作系统，每个用户都可以配置自己的环境变量，当然，也有全局环境变量可以为所有用户进行配置。所以，环境变量可以分为系统环境变量和用户环境变量。">
   
     <link rel="alternative" href="/atom.xml" title="Iris&#39;s Blog" type="application/atom+xml">
   
@@ -157,13 +157,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h5 id="什么是环境变量？"><a href="#什么是环境变量？" class="headerlink" title="什么是环境变量？"></a>什么是环境变量？</h5><p>当我们在命令行输入命令，系统会按照环境变量的设置，去相应的路径下查找这个命令的可执行文件，所以你不需要在执行某个命令之前进入到它所在的路径，环境变量都帮你记录啦～</p>
+        <h5 id="什么是环境变量？"><a class="header-anchor" href="#什么是环境变量？">¶</a>什么是环境变量？</h5>
+<p>当我们在命令行输入命令，系统会按照环境变量的设置，去相应的路径下查找这个命令的可执行文件，所以你不需要在执行某个命令之前进入到它所在的路径，环境变量都帮你记录啦～</p>
 <p>Linux是一个多用户多任务的操作系统，每个用户都可以配置自己的环境变量，当然，也有全局环境变量可以为所有用户进行配置。所以，环境变量可以分为系统环境变量和用户环境变量。</p>
 <a id="more"></a>
-<h5 id="系统环境变量"><a href="#系统环境变量" class="headerlink" title="系统环境变量"></a>系统环境变量</h5><p>系统环境变量对所有用户有效，并且设置之后永久有效（不会在重启终端后就消失），保存在/etc/profile中，编辑这个文件就可以修改系统环境变量：</p>
+<h5 id="系统环境变量"><a class="header-anchor" href="#系统环境变量">¶</a>系统环境变量</h5>
+<p>系统环境变量对所有用户有效，并且设置之后永久有效（不会在重启终端后就消失），保存在/etc/profile中，编辑这个文件就可以修改系统环境变量：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/profile</span><br><span class="line">export PATH=&quot;$PATH:/my_path&quot;</span><br></pre></td></tr></table></figure>
 <p>保存退出后需要<code>source /etc/profile</code>或重启终端才可以生效。</p>
-<h5 id="用户环境变量"><a href="#用户环境变量" class="headerlink" title="用户环境变量"></a>用户环境变量</h5><p>用户环境变量一般在用户主目录下的 <code>.profile</code> 或 <code>.bashrc</code> 或 <code>.zshrc</code>，根据当前登录的shell不同，系统会执行不同的文件，这个看名字应该就明白了哈。编辑以上文件修改用户环境变量：</p>
+<h5 id="用户环境变量"><a class="header-anchor" href="#用户环境变量">¶</a>用户环境变量</h5>
+<p>用户环境变量一般在用户主目录下的 <code>.profile</code> 或 <code>.bashrc</code> 或 <code>.zshrc</code>，根据当前登录的shell不同，系统会执行不同的文件，这个看名字应该就明白了哈。编辑以上文件修改用户环境变量：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">vim ~/.zshrc</span><br><span class="line">export PATH=&quot;$PATH:/my_path&quot;</span><br></pre></td></tr></table></figure>
 <p>保存退出后需要<code>source /etc/profile</code>或重启终端才可以生效。</p>
 <p>如果只需要临时的环境变量，改动文件比较麻烦而且可能忘记删掉，不用担心，你可以直接在命令行输入<code>export 变量名=变量值</code>来添加临时环境变量，它将在关闭shell后消失。</p>
@@ -379,6 +382,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">linux</a>
               </li>
              
@@ -404,10 +411,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">区块链</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
             
             <div class="clearfix"></div>

@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>区块链运作的核心技术 | Iris&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="区块链的链接：区块头中包含上个区块头的哈希值来进行连接。">
+  <meta name="description" content="¶区块链的链接： 区块头中包含上个区块头的哈希值来进行连接。">
 <meta name="keywords" content="区块链">
 <meta property="og:type" content="article">
 <meta property="og:title" content="区块链运作的核心技术">
 <meta property="og:url" content="http://yoursite.com/2018/05/05/区块链运作的核心技术/index.html">
 <meta property="og:site_name" content="Iris&#39;s Blog">
-<meta property="og:description" content="区块链的链接：区块头中包含上个区块头的哈希值来进行连接。">
+<meta property="og:description" content="¶区块链的链接： 区块头中包含上个区块头的哈希值来进行连接。">
 <meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2018-05-18T05:22:45.612Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="区块链运作的核心技术">
-<meta name="twitter:description" content="区块链的链接：区块头中包含上个区块头的哈希值来进行连接。">
+<meta name="twitter:description" content="¶区块链的链接： 区块头中包含上个区块头的哈希值来进行连接。">
   
     <link rel="alternative" href="/atom.xml" title="Iris&#39;s Blog" type="application/atom+xml">
   
@@ -157,41 +157,55 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h5 id="区块链的链接："><a href="#区块链的链接：" class="headerlink" title="区块链的链接："></a>区块链的链接：</h5><p>区块头中包含上个区块头的哈希值来进行连接。<a id="more"></a></p>
-<h5 id="共识机制："><a href="#共识机制：" class="headerlink" title="共识机制："></a>共识机制：</h5><p>保证全网数据的一致性。</p>
+        <h5 id="区块链的链接："><a class="header-anchor" href="#区块链的链接：">¶</a>区块链的链接：</h5>
+<p>区块头中包含上个区块头的哈希值来进行连接。<a id="more"></a></p>
+<h5 id="共识机制："><a class="header-anchor" href="#共识机制：">¶</a>共识机制：</h5>
+<p>保证全网数据的一致性。</p>
 <ul>
-<li><p>PoW（工作量证明）：</p>
+<li>
+<p>PoW（工作量证明）：</p>
 <p>挖矿机制，完全区中心化，只要破坏者的算力不超过所有节点算力的50%，就可以保证网络的交易状态一致，但会造成大量资源浪费，矿池算力的高度集中背离了区中心化的设计初衷。</p>
 </li>
 </ul>
 <ul>
-<li><p>PoS（权益证明）：</p>
+<li>
+<p>PoS（权益证明）：</p>
 <p>要求节点提供一定数量的代币来获取竞争区块链记账权的一种分布式公式机制。会使网络共识受少数富人支配。</p>
 </li>
-<li><p>DPoS（股份授权证明）：</p>
+<li>
+<p>DPoS（股份授权证明）：</p>
 <p>类似于股东及会投票选举。</p>
 </li>
-<li><p>分布式一致性算法：</p>
+<li>
+<p>分布式一致性算法：</p>
 <p>拜占庭容错算法（PBFT）能解决拜占庭将军问题；Paxos、Raft能解决非拜占庭问题。分布式一致性算法目前常用于联盟链和私有链。</p>
 </li>
 </ul>
-<h5 id="解锁-锁定脚本："><a href="#解锁-锁定脚本：" class="headerlink" title="解锁/锁定脚本："></a>解锁/锁定脚本：</h5><p>脚本是区块链上实现自动验证、自动执行合约的重要技术。</p>
+<h5 id="解锁-锁定脚本："><a class="header-anchor" href="#解锁-锁定脚本：">¶</a>解锁/锁定脚本：</h5>
+<p>脚本是区块链上实现自动验证、自动执行合约的重要技术。</p>
 <p>锁定脚本是在输出交易上加上的条件，可以看做题目，只有揭开了题目的人才可以花这个UTXO；解锁脚本位于交易的输入，是相应难题的解。</p>
-<h5 id="Merkle证明："><a href="#Merkle证明：" class="headerlink" title="Merkle证明："></a>Merkle证明：</h5><p>将交易存储在区块中，使得交易不能被篡改，同时也容易验证交易是否包含在一个特定的区块中。</p>
-<h5 id="区块链的交易流程："><a href="#区块链的交易流程：" class="headerlink" title="区块链的交易流程："></a>区块链的交易流程：</h5><ul>
-<li><p>交易的生成：</p>
+<h5 id="merkle证明："><a class="header-anchor" href="#merkle证明：">¶</a>Merkle证明：</h5>
+<p>将交易存储在区块中，使得交易不能被篡改，同时也容易验证交易是否包含在一个特定的区块中。</p>
+<h5 id="区块链的交易流程："><a class="header-anchor" href="#区块链的交易流程：">¶</a>区块链的交易流程：</h5>
+<ul>
+<li>
+<p>交易的生成：</p>
 <p>所有者A用他的私钥对前一次交易的UTXO和下一位所有者B签署一个数字签名，制成交易单。</p>
 </li>
-<li><p>交易的传播：</p>
+<li>
+<p>交易的传播：</p>
 <p>A将交易单广播至全网，每个节点将收到的交易信息纳入一个区块中。</p>
 </li>
-<li><p>工作量证明：</p>
+<li>
+<p>工作量证明：</p>
 <p>节点竞争记账权。</p>
 </li>
-<li><p>整个网络节点验证：</p>
+<li>
+<p>整个网络节点验证：</p>
 <p>当一个节点得到记账权时，它就像全网广播该区块，并有其他节点验证。</p>
 </li>
-<li><p>记录到链：</p>
+<li>
+<p>记录到链：</p>
 <p>全网其他节点核对无误后，将该区快添加到链。</p>
 </li>
 </ul>
@@ -407,6 +421,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">linux</a>
               </li>
              
@@ -432,10 +450,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">区块链</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
             
             <div class="clearfix"></div>

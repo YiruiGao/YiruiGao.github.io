@@ -8,18 +8,21 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>动态规划 | Iris&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="动态规划算法的基本要素： 最优子结构：问题的最优解包含子问题的最优解。 重叠子问题：递归求解时，子问题被重复计算多次。  分治与动态规划的区别： 分治是自顶向下求解，求n的最优解时，并不能立即确定最优解，所以并不是只求n/2的最优解（二分思想）就行了，需要做许多子弟向上尝试，而每一次尝试都需要进行一次递归，导致规模较小的子问题多次重复计算。 动态规划是自底向上求解，将所有子问题的解都记下来，求更高">
+  <meta name="description" content="¶动态规划算法的基本要素：  最优子结构：问题的最优解包含子问题的最优解。 重叠子问题：递归求解时，子问题被重复计算多次。  ¶分治与动态规划的区别：  分治是自顶向下求解，求n的最优解时，并不能立即确定最优解，所以并不是只求n/2的最优解（二分思想）就行了，需要做许多子弟向上尝试，而每一次尝试都需要进行一次递归，导致规模较小的子问题多次重复计算。 动态规划是自底向上求解，将所有子问题的解都记下来">
 <meta name="keywords" content="算法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="动态规划">
 <meta property="og:url" content="http://yoursite.com/2018/05/27/动态规划/index.html">
 <meta property="og:site_name" content="Iris&#39;s Blog">
-<meta property="og:description" content="动态规划算法的基本要素： 最优子结构：问题的最优解包含子问题的最优解。 重叠子问题：递归求解时，子问题被重复计算多次。  分治与动态规划的区别： 分治是自顶向下求解，求n的最优解时，并不能立即确定最优解，所以并不是只求n/2的最优解（二分思想）就行了，需要做许多子弟向上尝试，而每一次尝试都需要进行一次递归，导致规模较小的子问题多次重复计算。 动态规划是自底向上求解，将所有子问题的解都记下来，求更高">
+<meta property="og:description" content="¶动态规划算法的基本要素：  最优子结构：问题的最优解包含子问题的最优解。 重叠子问题：递归求解时，子问题被重复计算多次。  ¶分治与动态规划的区别：  分治是自顶向下求解，求n的最优解时，并不能立即确定最优解，所以并不是只求n/2的最优解（二分思想）就行了，需要做许多子弟向上尝试，而每一次尝试都需要进行一次递归，导致规模较小的子问题多次重复计算。 动态规划是自底向上求解，将所有子问题的解都记下来">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-05-27T15:49:39.758Z">
+<meta property="og:image" content="http://yoursite.com/img/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%921.png">
+<meta property="og:image" content="http://yoursite.com/img/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%922.png">
+<meta property="og:updated_time" content="2018-05-28T11:00:43.198Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="动态规划">
-<meta name="twitter:description" content="动态规划算法的基本要素： 最优子结构：问题的最优解包含子问题的最优解。 重叠子问题：递归求解时，子问题被重复计算多次。  分治与动态规划的区别： 分治是自顶向下求解，求n的最优解时，并不能立即确定最优解，所以并不是只求n/2的最优解（二分思想）就行了，需要做许多子弟向上尝试，而每一次尝试都需要进行一次递归，导致规模较小的子问题多次重复计算。 动态规划是自底向上求解，将所有子问题的解都记下来，求更高">
+<meta name="twitter:description" content="¶动态规划算法的基本要素：  最优子结构：问题的最优解包含子问题的最优解。 重叠子问题：递归求解时，子问题被重复计算多次。  ¶分治与动态规划的区别：  分治是自顶向下求解，求n的最优解时，并不能立即确定最优解，所以并不是只求n/2的最优解（二分思想）就行了，需要做许多子弟向上尝试，而每一次尝试都需要进行一次递归，导致规模较小的子问题多次重复计算。 动态规划是自底向上求解，将所有子问题的解都记下来">
+<meta name="twitter:image" content="http://yoursite.com/img/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%921.png">
   
     <link rel="alternative" href="/atom.xml" title="Iris&#39;s Blog" type="application/atom+xml">
   
@@ -157,15 +160,63 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h5 id="动态规划算法的基本要素："><a href="#动态规划算法的基本要素：" class="headerlink" title="动态规划算法的基本要素："></a>动态规划算法的基本要素：</h5><ul>
+        <h5 id="动态规划算法的基本要素："><a class="header-anchor" href="#动态规划算法的基本要素：">¶</a>动态规划算法的基本要素：</h5>
+<ul>
 <li>最优子结构：问题的最优解包含子问题的最优解。</li>
 <li>重叠子问题：递归求解时，子问题被重复计算多次。</li>
 </ul>
-<h5 id="分治与动态规划的区别："><a href="#分治与动态规划的区别：" class="headerlink" title="分治与动态规划的区别："></a>分治与动态规划的区别：</h5><ul>
+<h5 id="分治与动态规划的区别："><a class="header-anchor" href="#分治与动态规划的区别：">¶</a>分治与动态规划的区别：</h5>
+<ul>
 <li>分治是<strong>自顶向下</strong>求解，求n的最优解时，并不能立即确定最优解，所以并不是只求n/2的最优解（二分思想）就行了，需要做许多子弟向上尝试，而每一次尝试都需要进行一次递归，导致规模较小的子问题多次重复计算。</li>
 <li>动态规划是<strong>自底向上</strong>求解，将所有子问题的解都记下来，求更高层问题的最优解时只需遍历它的子问题的最优解。</li>
 </ul>
-<h5 id="备忘录方法："><a href="#备忘录方法：" class="headerlink" title="备忘录方法："></a>备忘录方法：</h5><p>自顶向下的动态规划，与递归结构相同，但会在求解过程中记录子问题的解，用时差表，若已有解则直接使用，还没求解就求解并记录到表中。复杂度与动态规划相同。</p>
+<h5 id="备忘录方法："><a class="header-anchor" href="#备忘录方法：">¶</a>备忘录方法：</h5>
+<p>自顶向下的动态规划，与递归结构相同，但会在求解过程中记录子问题的解，用时差表，若已有解则直接使用，还没求解就求解并记录到表中。复杂度与动态规划相同。</p>
+<h5 id="矩阵连乘问题："><a class="header-anchor" href="#矩阵连乘问题：">¶</a>矩阵连乘问题：</h5>
+<ul>
+<li>
+<p>递归定义：</p>
+<p><img src="/img/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%921.png" alt="动态规划1"></p>
+<p>但递归求解会重复计算子问题，动态规划将所有子问题的最优解计算出来并记录，用的时候查询即可，不需要重复计算。</p>
+</li>
+<li>
+<p>计算最优值：</p>
+<p>将矩阵连乘积A<sub>i</sub>A<sub>i+1</sub>…A<sub>j</sub>简记为A[i:j]；p[]记录各矩阵的行列数，如：A<sub>i</sub>的行为p[i-1]，列为p[i]；m[i][j]记录A[i:j]所需的最少数乘次数（子问题最优解）;s[i][j]记录A[i][j]最优的断开点。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">matrixchain</span><span class="params">(<span class="keyword">int</span>[] p, <span class="keyword">int</span>[][] m, <span class="keyword">int</span>[][] s)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n=p.length-<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) m[i][i]=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> r=<span class="number">2</span>;r&lt;=n;r++)&#123;  <span class="comment">//子问题长度</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n-r+<span class="number">1</span>;i++)&#123;   <span class="comment">//找到A[i:j]的最优解</span></span><br><span class="line">            <span class="keyword">int</span> j = i+r-<span class="number">1</span>;</span><br><span class="line">            m[i][j] = m[i+<span class="number">1</span>][j]+p[i-<span class="number">1</span>]*p[i]*p[j];   <span class="comment">//初始化：从第一个元素后分开</span></span><br><span class="line">            s[i][j] = i;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> k=i+<span class="number">1</span>;k&lt;j;k++)&#123;</span><br><span class="line">                <span class="keyword">int</span> t = m[i][k]+m[k+<span class="number">1</span>][j]+p[i-<span class="number">1</span>]*p[k]*p[j];</span><br><span class="line">                <span class="keyword">if</span>(t&lt;m[i][j])&#123;</span><br><span class="line">                    m[i][j] = t;</span><br><span class="line">                    s[i][j] = k;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>根据s[][]构造最优解：</p>
+<p>A[1:n]的最优解为(A[1:s[i][n]])*(A[s[i][n]+1:n])。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">traceback</span><span class="params">(<span class="keyword">int</span>[][] s, <span class="keyword">int</span> i, <span class="keyword">int</span> j)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(i == j) <span class="keyword">return</span>;</span><br><span class="line">    traceback(s, i, s[i][j]);</span><br><span class="line">    traceback(s, s[i][j]+<span class="number">1</span>, j);</span><br><span class="line">    system.out.println(<span class="string">"multiply A"</span>+i+<span class="string">","</span>+s[i][j]+<span class="string">"and A"</span>+(s[i][j]+<span class="number">1</span>)+<span class="string">","</span>+j);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="最长公共子序列："><a class="header-anchor" href="#最长公共子序列：">¶</a>最长公共子序列：</h5>
+<ul>
+<li>
+<p>分析最优解结构：</p>
+<p>设序列X={x<sub>1</sub>,x<sub>2</sub>,x<sub>3</sub>,…x<sub>m</sub>}和Y={y<sub>1</sub>,y<sub>2</sub>,y<sub>3</sub>,…y<sub>n</sub>}的最长公共子序列为Z={z<sub>1</sub>,z<sub>2</sub>,…z<sub>k</sub>}，则：</p>
+<ul>
+<li>若x<sub>m</sub>=y<sub>n</sub>，则z<sub>k</sub>=x<sub>m</sub>=y<sub>n</sub>，且Z[1:k-1]是X[1:m-1]和Y[1:n-1]的最长公共子序列;</li>
+<li>若x<sub>m</sub>!=y<sub>n</sub>，且z<sub>k</sub>!=x<sub>m</sub>，则Z[1:k-1]是X[1:m]和Y[1:n-1]的最长公共子序列;</li>
+<li>若x<sub>m</sub>!=x<sub>n</sub>，且z<sub>k</sub>!=y<sub>n</sub>，则Z[1:k-1]是X[1:m-1]和Y[1:n]的最长公共子序列。</li>
+</ul>
+</li>
+<li>
+<p>递归结构：</p>
+<p><img src="/img/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%922.png" alt="动态规划2"></p>
+</li>
+<li>
+<p>计算最优值：</p>
+<p>c[i][j]存储X<sub>i</sub>和Y<sub>j</sub>的最长公共子序列的长度；b[i][j]记录c[i][j]的值是由哪个类型的子问题得到的：</p>
+<p>​	1.X与Y尾部相同；2.去除X尾部；3.去除Y尾部。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">lcsLength</span><span class="params">(<span class="keyword">char</span>[] x, <span class="keyword">char</span>[] y, <span class="keyword">int</span>[][] b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> m = x.length-<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> n = y.length-<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span>[][] c = <span class="keyword">new</span> <span class="keyword">int</span>[m+<span class="number">1</span>][n+<span class="number">1</span>];  <span class="comment">//加了第0行与第0列，用于表示空序列</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;i++) c[i][<span class="number">0</span>] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++) c[<span class="number">0</span>][i] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=m;i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;=n;j++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(x[i] == y[j])&#123;</span><br><span class="line">                c[i][j] = c[i-<span class="number">1</span>][j-<span class="number">1</span>]+<span class="number">1</span>;</span><br><span class="line">                b[i][j] = <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(c[i-<span class="number">1</span>][j] &gt;= c[i][j-<span class="number">1</span>])&#123;</span><br><span class="line">                c[i][j] = c[i-<span class="number">1</span>][j];</span><br><span class="line">                b[i][j] = <span class="number">2</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                c[i][j] = c[i][j-<span class="number">1</span>];</span><br><span class="line">                b[i][j] = <span class="number">3</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> c[m][n];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>构造最优解：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">lcs</span><span class="params">(<span class="keyword">int</span> i, <span class="keyword">int</span> j, <span class="keyword">char</span>[] x, <span class="keyword">int</span>[][] b)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(i==<span class="number">0</span> || j==<span class="number">0</span>) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">if</span>(b[i][j] == <span class="number">1</span>)&#123;</span><br><span class="line">        lcs(i-<span class="number">1</span>, j-<span class="number">1</span>, x, b);</span><br><span class="line">        system.out.println(x[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(b[i][j] == <span class="number">2</span>) lcs(i-<span class="number">1</span>, j, x, b);</span><br><span class="line">    <span class="keyword">else</span> lcs(i, j-<span class="number">1</span>, x, b);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>​</p>
+</li>
+</ul>
 
       
 
@@ -369,6 +420,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">linux</a>
               </li>
              
@@ -394,10 +449,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">区块链</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
             
             <div class="clearfix"></div>

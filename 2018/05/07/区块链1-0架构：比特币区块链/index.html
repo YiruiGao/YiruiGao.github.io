@@ -8,19 +8,19 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>区块链1.0架构：比特币区块链 | Iris&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="基本架构：">
+  <meta name="description" content="¶基本架构：">
 <meta name="keywords" content="区块链">
 <meta property="og:type" content="article">
 <meta property="og:title" content="区块链1.0架构：比特币区块链">
 <meta property="og:url" content="http://yoursite.com/2018/05/07/区块链1-0架构：比特币区块链/index.html">
 <meta property="og:site_name" content="Iris&#39;s Blog">
-<meta property="og:description" content="基本架构：">
+<meta property="og:description" content="¶基本架构：">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/img/1.0.jpg">
 <meta property="og:updated_time" content="2018-05-18T05:21:55.847Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="区块链1.0架构：比特币区块链">
-<meta name="twitter:description" content="基本架构：">
+<meta name="twitter:description" content="¶基本架构：">
 <meta name="twitter:image" content="http://yoursite.com/img/1.0.jpg">
   
     <link rel="alternative" href="/atom.xml" title="Iris&#39;s Blog" type="application/atom+xml">
@@ -159,9 +159,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h5 id="基本架构："><a href="#基本架构：" class="headerlink" title="基本架构："></a>基本架构：<a id="more"></a></h5><p><img src="/img/1.0.jpg" alt="1.0"></p>
-<h5 id="比特币前端："><a href="#比特币前端：" class="headerlink" title="比特币前端："></a>比特币前端：</h5><ul>
-<li>钱包：保存用户私钥，管理用户余额，提供交易功能。<ul>
+        <h5 id="基本架构：-more"><a class="header-anchor" href="#基本架构：-more">¶</a>基本架构：<a id="more"></a></h5>
+<p><img src="/img/1.0.jpg" alt="1.0"></p>
+<h5 id="比特币前端："><a class="header-anchor" href="#比特币前端：">¶</a>比特币前端：</h5>
+<ul>
+<li>钱包：保存用户私钥，管理用户余额，提供交易功能。
+<ul>
 <li>非决定性钱包：直接保存私钥，私钥数据保存在Berkeley DB中;</li>
 <li>决定性钱包：保存私钥种子，用私钥种子生成私钥。</li>
 </ul>
@@ -173,9 +176,11 @@
 <li>比特币浏览器bx：除bitcoin-cli的功能外，还提供密钥管理和处理工具。</li>
 <li>图形开发工具（QT）</li>
 </ul>
-<h5 id="比特币节点后端："><a href="#比特币节点后端：" class="headerlink" title="比特币节点后端："></a>比特币节点后端：</h5><p>bitcoin-qt是包含前后端（除挖矿功能以外）的一体化节点，bitcoind是主要的比特币后台程序。</p>
+<h5 id="比特币节点后端："><a class="header-anchor" href="#比特币节点后端：">¶</a>比特币节点后端：</h5>
+<p>bitcoin-qt是包含前后端（除挖矿功能以外）的一体化节点，bitcoind是主要的比特币后台程序。</p>
 <ul>
-<li><p>区块链管理：</p>
+<li>
+<p>区块链管理：</p>
 <ul>
 <li>下载区快链：在比特币节点第一次加入网络运行时，先要下载并验证整条区块链。“区块报头先行”下载方式：从邻节点下载所有区块头，再并行的从多个邻节点下载区快体。</li>
 <li>接受区块链：一个节点接收到新区块，若该区块头包含前一区块的哈希与当前节点区块哈希相同，则尝试链接该新区块，并将它作为当前链条的最懂端区块。</li>
@@ -183,11 +188,14 @@
 <li>重组区块链：当节点发现网络中有一条不基于它当前链的更长链时，断开现有区块并重组。该过程涉及UTXO的更改，被断开的区块中的交易会回退到交易内存池。</li>
 </ul>
 </li>
-<li><p>区块验证：该模块会基于特定条件检查收到的交易是否合规。</p>
+<li>
+<p>区块验证：该模块会基于特定条件检查收到的交易是否合规。</p>
 </li>
-<li><p>内存池（交易池）管理：节点将通过验证的交易放在一个交易池中，挖到区块后，按一定的优先级从交易池中选取交易放入区块。“孤儿”交易池指，如果一个Tx的输入相对应的UTXO找不到，暂时放入“孤儿”交易池。</p>
+<li>
+<p>内存池（交易池）管理：节点将通过验证的交易放在一个交易池中，挖到区块后，按一定的优先级从交易池中选取交易放入区块。“孤儿”交易池指，如果一个Tx的输入相对应的UTXO找不到，暂时放入“孤儿”交易池。</p>
 </li>
-<li><p>邻节点管理：新节点初始启动时要发现其他节点并至少与一个连接。</p>
+<li>
+<p>邻节点管理：新节点初始启动时要发现其他节点并至少与一个连接。</p>
 <p>发现方式：</p>
 <ul>
 <li>“DNS”种子：提供比特币节点地址的服务器；</li>
@@ -195,25 +203,35 @@
 </ul>
 <p>该模块会自动维持连接，动态更新邻节点。</p>
 </li>
-<li><p>共识管理：包括挖矿、区块验证和交易验证的规则。</p>
+<li>
+<p>共识管理：包括挖矿、区块验证和交易验证的规则。</p>
 </li>
-<li><p>规则管理：管理共识规则以外的个性化规则，比如拒绝大于200K的交易。</p>
+<li>
+<p>规则管理：管理共识规则以外的个性化规则，比如拒绝大于200K的交易。</p>
 </li>
-<li><p>密码模块：处理比特币的地址。</p>
+<li>
+<p>密码模块：处理比特币的地址。</p>
 </li>
-<li><p>签名模块：实现数字签名以及生成公钥。</p>
+<li>
+<p>签名模块：实现数字签名以及生成公钥。</p>
 </li>
-<li><p>脚本引擎：基于堆栈的非图灵完备的校验的运算平台。</p>
+<li>
+<p>脚本引擎：基于堆栈的非图灵完备的校验的运算平台。</p>
 </li>
-<li><p>挖矿模块：竞争记账权。</p>
+<li>
+<p>挖矿模块：竞争记账权。</p>
 </li>
-<li><p>HTTP/JSON RPC服务端：该接口缺省只接受来自本机的客户端连接请求，远程连接风险太大。</p>
+<li>
+<p>HTTP/JSON RPC服务端：该接口缺省只接受来自本机的客户端连接请求，远程连接风险太大。</p>
 </li>
-<li><p>Berkeley DB和Level DB数据库：Berkeley DB做钱包数据库，它是文件数据库，保存键-值对；区块数据不存在数据库，而作为文件类型存放在硬盘上；Level DB存放区块索引与UTXO，保存键-值对；回滚记录以文件方式存储。</p>
+<li>
+<p>Berkeley DB和Level DB数据库：Berkeley DB做钱包数据库，它是文件数据库，保存键-值对；区块数据不存在数据库，而作为文件类型存放在硬盘上；Level DB存放区块索引与UTXO，保存键-值对；回滚记录以文件方式存储。</p>
 </li>
-<li><p>P2P网络管理：在P2P网络上实现和其他邻节点的通信功能。</p>
+<li>
+<p>P2P网络管理：在P2P网络上实现和其他邻节点的通信功能。</p>
 </li>
-<li><p>ZMQ队列管理：消息队列管理和消息分发。</p>
+<li>
+<p>ZMQ队列管理：消息队列管理和消息分发。</p>
 </li>
 </ul>
 
@@ -428,6 +446,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">linux</a>
               </li>
              
@@ -453,10 +475,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">区块链</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
             
             <div class="clearfix"></div>

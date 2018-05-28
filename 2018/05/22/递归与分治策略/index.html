@@ -8,23 +8,23 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>递归与分治策略 | Iris&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="算法设计模式：">
+  <meta name="description" content="¶算法设计模式：">
 <meta name="keywords" content="算法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="递归与分治策略">
 <meta property="og:url" content="http://yoursite.com/2018/05/22/递归与分治策略/index.html">
 <meta property="og:site_name" content="Iris&#39;s Blog">
-<meta property="og:description" content="算法设计模式：">
+<meta property="og:description" content="¶算法设计模式：">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="http://yoursite.com/img/公式1.png">
-<meta property="og:image" content="http://yoursite.com/img/公式2.png">
-<meta property="og:image" content="http://yoursite.com/img/公式3.png">
+<meta property="og:image" content="http://yoursite.com/img/%E5%85%AC%E5%BC%8F1.png">
+<meta property="og:image" content="http://yoursite.com/img/%E5%85%AC%E5%BC%8F2.png">
+<meta property="og:image" content="http://yoursite.com/img/%E5%85%AC%E5%BC%8F3.png">
 <meta property="og:image" content="http://yoursite.com/img/p1.png">
 <meta property="og:updated_time" content="2018-05-24T11:55:02.134Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="递归与分治策略">
-<meta name="twitter:description" content="算法设计模式：">
-<meta name="twitter:image" content="http://yoursite.com/img/公式1.png">
+<meta name="twitter:description" content="¶算法设计模式：">
+<meta name="twitter:image" content="http://yoursite.com/img/%E5%85%AC%E5%BC%8F1.png">
   
     <link rel="alternative" href="/atom.xml" title="Iris&#39;s Blog" type="application/atom+xml">
   
@@ -162,47 +162,60 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h5 id="算法设计模式："><a href="#算法设计模式：" class="headerlink" title="算法设计模式："></a>算法设计模式：<a id="more"></a></h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">divide-and-conquer(P)&#123;</span><br><span class="line">    if(|P|&lt;=n0) adhoc(P);   //adhoc(P)用于直接解小规模P</span><br><span class="line">    divide P into smaller subinstances P1,P2,...Pk;</span><br><span class="line">    for(i=1;i&lt;=k;i++)&#123;</span><br><span class="line">        yi = divide-and-conquer(Pi);</span><br><span class="line">    &#125;</span><br><span class="line">    return merge(y1,y2,...yk);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="分治法效率："><a href="#分治法效率：" class="headerlink" title="分治法效率："></a>分治法效率：</h5><p>规模为|P|=n的问题所需时间：</p>
-<p><img src="/img/公式1.png" alt="公式1"></p>
-<h5 id="二分搜索："><a href="#二分搜索：" class="headerlink" title="二分搜索："></a>二分搜索：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">public static int binarySearch(int[] a, int x, int n)&#123;</span><br><span class="line">    int left=0; int right=n-1;</span><br><span class="line">    while(left&lt;=right)&#123;</span><br><span class="line">        int middle=(left+right)/2;</span><br><span class="line">        if(x==a[middle]) return middle;</span><br><span class="line">        if(x&gt;a[middle]) left=middle+1;</span><br><span class="line">        else right=middle-1;</span><br><span class="line">    &#125;</span><br><span class="line">    return -1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h5 id="算法设计模式：-more"><a class="header-anchor" href="#算法设计模式：-more">¶</a>算法设计模式：<a id="more"></a></h5>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">divide-and-conquer(P)&#123;</span><br><span class="line">    if(|P|&lt;=n0) adhoc(P);   //adhoc(P)用于直接解小规模P</span><br><span class="line">    divide P into smaller subinstances P1,P2,...Pk;</span><br><span class="line">    for(i=1;i&lt;=k;i++)&#123;</span><br><span class="line">        yi = divide-and-conquer(Pi);</span><br><span class="line">    &#125;</span><br><span class="line">    return merge(y1,y2,...yk);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="分治法效率："><a class="header-anchor" href="#分治法效率：">¶</a>分治法效率：</h5>
+<p>规模为|P|=n的问题所需时间：</p>
+<p><img src="/img/%E5%85%AC%E5%BC%8F1.png" alt="公式1"></p>
+<h5 id="二分搜索："><a class="header-anchor" href="#二分搜索：">¶</a>二分搜索：</h5>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">public static int binarySearch(int[] a, int x, int n)&#123;</span><br><span class="line">    int left=0; int right=n-1;</span><br><span class="line">    while(left&lt;=right)&#123;</span><br><span class="line">        int middle=(left+right)/2;</span><br><span class="line">        if(x==a[middle]) return middle;</span><br><span class="line">        if(x&gt;a[middle]) left=middle+1;</span><br><span class="line">        else right=middle-1;</span><br><span class="line">    &#125;</span><br><span class="line">    return -1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>每执行一次while循环，待搜索的数组大小减小一半，所以复杂度为O(logn)。</p>
-<h5 id="棋盘覆盖："><a href="#棋盘覆盖：" class="headerlink" title="棋盘覆盖："></a>棋盘覆盖：</h5><p>在一个2^k^*2^k^个方格组成的棋盘中，恰有一个特殊方格，用4种不同形态的L型骨牌覆盖除特殊方格以外的全部方格。</p>
+<h5 id="棋盘覆盖："><a class="header-anchor" href="#棋盘覆盖：">¶</a>棋盘覆盖：</h5>
+<p>在一个2<sup>k</sup>*2<sup>k</sup>个方格组成的棋盘中，恰有一个特殊方格，用4种不同形态的L型骨牌覆盖除特殊方格以外的全部方格。</p>
 <ul>
-<li>k&gt;0时，将2^k^*2^k^棋盘分割为4个2^k^*2^k^子棋盘;</li>
+<li>k&gt;0时，将2<sup>k</sup>*2<sup>k</sup>棋盘分割为4个2<sup>k</sup>*2<sup>k</sup>子棋盘;</li>
 <li>特殊方格位于其中一个子期盘，其他三个不是特殊棋盘;</li>
 <li>用一个L型骨牌覆盖着三个非特殊棋盘的汇合处，变为4个特殊子期盘;</li>
 <li>递归分割，至1*1棋盘。</li>
 </ul>
-<p>设T(k)是chessboard覆盖一个2^k^*2^k^棋盘所需要的时间：</p>
-<p>​    <img src="/img/公式2.png" alt="公式2"></p>
+<p>设T(k)是chessboard覆盖一个2<sup>k</sup>*2<sup>k</sup>棋盘所需要的时间：</p>
+<p>​	<img src="/img/%E5%85%AC%E5%BC%8F2.png" alt="公式2"></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">public void chessboard(int tr, int tc, int dr, int dc, int size)&#123;</span><br><span class="line">    if(size==1)return;</span><br><span class="line">    int t=tile++;  //L型骨牌号</span><br><span class="line">    	s=size/2;  //分割棋盘</span><br><span class="line">    if(dr&lt;tr+s &amp;&amp; dc&lt;tc+s)</span><br><span class="line">    	chessboard(tr, tc, dr, dc, s);  //特殊方格在此子棋盘中</span><br><span class="line">    else&#123; //此子期盘中无特殊方格，用L型骨牌覆盖</span><br><span class="line">        board[tr+s-1][tc+s-1]=t;</span><br><span class="line">        chessboard(tr, tc, tr+s-1, tc+s-1, s);</span><br><span class="line">    &#125;</span><br><span class="line">    ...   //对其余三个子期盘进行同样的处理</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="合并排序："><a href="#合并排序：" class="headerlink" title="合并排序："></a>合并排序：</h5><ul>
-<li><p>递归方式：</p>
+<h5 id="合并排序："><a class="header-anchor" href="#合并排序：">¶</a>合并排序：</h5>
+<ul>
+<li>
+<p>递归方式：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public void mergeSort(Comparable a[], int left, int right)&#123;</span><br><span class="line">    if(left&lt;right)&#123;</span><br><span class="line">        int i=(left+right)/2;</span><br><span class="line">        mergeSort(a, left, i);</span><br><span class="line">        mergeSort(a, i+1, right);</span><br><span class="line">        merge(a, b, left, i, right);   //合并到数组b</span><br><span class="line">        copy(a, b, left, right);    //复制回数组a</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><img src="/img/公式3.png" alt="公式3"></p>
+<p><img src="/img/%E5%85%AC%E5%BC%8F3.png" alt="公式3"></p>
 </li>
-<li><p>非递归形式：自然和并排序</p>
+<li>
+<p>非递归形式：自然和并排序</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">public void mergeSort(Comparable[] a)&#123;</span><br><span class="line">    Comparable[] b = new Comparable[a.length];</span><br><span class="line">    int s=1;  //步长</span><br><span class="line">    while(s&lt;a.length)&#123;</span><br><span class="line">        mergePass(a, b, s);      //合并倒数组b</span><br><span class="line">        s+=s;</span><br><span class="line">        mergePass(b, a, s);      //合并倒数组a</span><br><span class="line">        s+=s;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//用于合并排好序的相邻数组段</span><br><span class="line">public void mergePass(Comparable[] x, Comparable[] y, int s)&#123;</span><br><span class="line">    int i=0;</span><br><span class="line">    while(i&lt;=x.length-2*s)&#123;</span><br><span class="line">        merge(x, y, i, i+s-1, i+2*s-1);</span><br><span class="line">        i=i+2*s;</span><br><span class="line">    &#125;</span><br><span class="line">    if(i+s&lt;x.length)</span><br><span class="line">    	merge(x, y, i, i+s-1, x.length-1);</span><br><span class="line">    else</span><br><span class="line">    	for(int j=i;j&lt;x.length;j++)</span><br><span class="line">    		y[j]=x[j];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public void merge(Comparable[] c, Comparable[] d, int l, int m, int r)&#123;//合并c[l:m]和c[m+1:r]到d[l:r]</span><br><span class="line">    int i=l, j=m+1, k=l;</span><br><span class="line">    while((i&lt;=m) &amp;&amp; (j&lt;=r))&#123;</span><br><span class="line">        if(c[i].compareTo(c[j])&lt;=0)</span><br><span class="line">        	d[k++]=c[i++];</span><br><span class="line">        else</span><br><span class="line">        	d[k++]=c[j++];</span><br><span class="line">    &#125;</span><br><span class="line">    if(i&gt;m)</span><br><span class="line">        for(int q=j;q&lt;=r;q++) d[k++]=c[q];</span><br><span class="line">    else</span><br><span class="line">        for(int q=i;q&lt;=m;q++) d[k++]=c[q];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h5 id="快速排序："><a href="#快速排序：" class="headerlink" title="快速排序："></a>快速排序：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">public void qSort(int p, int r)&#123;</span><br><span class="line">    if(p&lt;r)&#123;</span><br><span class="line">        int q=partition(p, r);</span><br><span class="line">        qSort(p, q-1);</span><br><span class="line">        qSort(q, r);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">private int partition(int p, int r)&#123;</span><br><span class="line">    int i=p, j=r+1;</span><br><span class="line">    Comparable x = a[p];</span><br><span class="line">    while(true)&#123;</span><br><span class="line">        while(a[++i].compareTo(x)&lt;0 &amp;&amp; i&lt;r);</span><br><span class="line">        while(a[--j].compareTo(x)&gt;0);</span><br><span class="line">        if(i&gt;=j)break;</span><br><span class="line">        myMath.swap(a, i, j);</span><br><span class="line">    &#125;</span><br><span class="line">    a[p]=a[j];</span><br><span class="line">    a[j]=x;</span><br><span class="line">    return j;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="线性时间选择："><a href="#线性时间选择：" class="headerlink" title="线性时间选择："></a>线性时间选择：</h5><p>给定线性序集中n个元素和一个整数k，1&lt;=k&lt;=n，要求找出这n个元素中第k小的元素。</p>
+<h5 id="快速排序："><a class="header-anchor" href="#快速排序：">¶</a>快速排序：</h5>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">public void qSort(int p, int r)&#123;</span><br><span class="line">    if(p&lt;r)&#123;</span><br><span class="line">        int q=partition(p, r);</span><br><span class="line">        qSort(p, q-1);</span><br><span class="line">        qSort(q, r);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">private int partition(int p, int r)&#123;</span><br><span class="line">    int i=p, j=r+1;</span><br><span class="line">    Comparable x = a[p];</span><br><span class="line">    while(true)&#123;</span><br><span class="line">        while(a[++i].compareTo(x)&lt;0 &amp;&amp; i&lt;r);</span><br><span class="line">        while(a[--j].compareTo(x)&gt;0);</span><br><span class="line">        if(i&gt;=j)break;</span><br><span class="line">        myMath.swap(a, i, j);</span><br><span class="line">    &#125;</span><br><span class="line">    a[p]=a[j];</span><br><span class="line">    a[j]=x;</span><br><span class="line">    return j;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="线性时间选择："><a class="header-anchor" href="#线性时间选择：">¶</a>线性时间选择：</h5>
+<p>给定线性序集中n个元素和一个整数k，1&lt;=k&lt;=n，要求找出这n个元素中第k小的元素。</p>
 <p>思路：随机选出一个基准，将数组划分成两部分（大于基准的和小于基准的），得到基准所处的位置与k比较，决定去哪一部分找。</p>
 <p>随机产生基准：最坏O(n^2)，平均O(n)。</p>
 <p>线性时间找到基准：最坏O(n)。</p>
 <p>按每组5个元素划分：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">public Comparable select(int p, int r, int k)&#123;</span><br><span class="line">    if(r-p&lt;5)&#123;</span><br><span class="line">        bubbleSort(p, r);</span><br><span class="line">        return a[p+k-1];</span><br><span class="line">    &#125;</span><br><span class="line">    //将a[p+5*i]至a[p+5*i+4]的第三小元素与a[p+i]交换</span><br><span class="line">    //找中位数的中位数  r-p-4即n-5（去除不足和个的那组）</span><br><span class="line">    for(int i=0;i&lt;=(r-p+1-5)/5;i++)&#123;</span><br><span class="line">        int s=p+5*i;</span><br><span class="line">        int t=s+4;</span><br><span class="line">        bubbleSort(s, t);</span><br><span class="line">        myMath.swap(a, p+i, s+2);</span><br><span class="line">    &#125;</span><br><span class="line">    Comparable x=select(p, p+(r-p-4)/5, (r-p+6)/10);</span><br><span class="line">    int i=partition(p, r, x), j=i-p+1;</span><br><span class="line">    if(k&lt;=j) return select(p, i, k);</span><br><span class="line">    else return select(i+1, r, k-j);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h5 id="最接近点对问题："><a href="#最接近点对问题：" class="headerlink" title="最接近点对问题："></a>最接近点对问题：</h5><ul>
-<li><p>一维：</p>
+<h5 id="最接近点对问题："><a class="header-anchor" href="#最接近点对问题：">¶</a>最接近点对问题：</h5>
+<ul>
+<li>
+<p>一维：</p>
 <p>T(n)=O(nlogn)</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">public double cpair1(s)&#123;</span><br><span class="line">    n=|s|;</span><br><span class="line">    if(n&lt;2) return 无穷大;</span><br><span class="line">    m=s中各点坐标的中位数;</span><br><span class="line">    构造s1和s2;  //s1=&#123;x属于S|x&lt;=m&#125;, s2=&#123;x属于S|x&gt;m&#125;</span><br><span class="line">    d1=cpair1(s1);</span><br><span class="line">    d2=cpair1(s2);</span><br><span class="line">    p=max(s1);</span><br><span class="line">    q=min(s2);</span><br><span class="line">    d=min(d1, d2, q-p);</span><br><span class="line">    return d;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>二维（平面）：</p>
+<li>
+<p>二维（平面）：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">public double cpair2(s)&#123;</span><br><span class="line">    n=|s|;</span><br><span class="line">    if(n&lt;2) return 无穷大;</span><br><span class="line">    1.m=s中各点x坐标的中位数;</span><br><span class="line">      构造s1和s2;   //s1=&#123;p属于S|x(p)&lt;=m&#125;, s2=&#123;p属于S|x(p)&gt;m&#125;</span><br><span class="line">    2.d1=cpair2(s1);  d2=cpair2(s2);</span><br><span class="line">    3.dm=min(d1, d2);</span><br><span class="line">    4.设P1是s1中距垂直分割线l的距离在dm之内的所有点的聚合;</span><br><span class="line">    将P1和P2中的点依y坐标轴排序;</span><br><span class="line">    并设x和y是相应的已排好序的点列;</span><br><span class="line">    5.通过扫描x以及对于x中的每个点检查y中与其距离在dm之内的所有点;</span><br><span class="line">    设dl是这种扫描方式找到的点对间的最小距离;</span><br><span class="line">    6.d=min(dm, dl);</span><br><span class="line">    return d;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h5 id="循环赛日程表："><a href="#循环赛日程表：" class="headerlink" title="循环赛日程表："></a>循环赛日程表：</h5><p>n=2^k个选手，每个选手必须与其他n-1个选手赛一次，每个选手一天只能赛一次，循环赛一共进行n-1天。</p>
+<h5 id="循环赛日程表："><a class="header-anchor" href="#循环赛日程表：">¶</a>循环赛日程表：</h5>
+<p>n=2^k个选手，每个选手必须与其他n-1个选手赛一次，每个选手一天只能赛一次，循环赛一共进行n-1天。</p>
 <p><img src="/img/p1.png" alt="p1"></p>
 <p>构造n*(n-1)的表，(i,j)点表示选手i第j天的对手;方便计算所以最左边加一列，可看成第0天选手与自己比赛。</p>
 <p>分治思想：将所有区域看成四块，递归将1拷贝到4，2拷贝到3。</p>
@@ -419,6 +432,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">linux</a>
               </li>
              
@@ -444,10 +461,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">区块链</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
             
             <div class="clearfix"></div>
