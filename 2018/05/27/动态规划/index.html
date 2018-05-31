@@ -8,13 +8,13 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>动态规划 | Iris&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="¶动态规划算法的基本要素：  最优子结构：问题的最优解包含子问题的最优解。 重叠子问题：递归求解时，子问题被重复计算多次。  ¶分治与动态规划的区别：  分治是自顶向下求解，求n的最优解时，并不能立即确定最优解，所以并不是只求n/2的最优解（二分思想）就行了，需要做许多子弟向上尝试，而每一次尝试都需要进行一次递归，导致规模较小的子问题多次重复计算。 动态规划是自底向上求解，将所有子问题的解都记下来">
+  <meta name="description" content="¶动态规划算法的基本要素：  最优子结构：问题的最优解包含子问题的最优解。 重叠子问题：递归求解时，子问题被重复计算多次。">
 <meta name="keywords" content="算法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="动态规划">
 <meta property="og:url" content="http://yoursite.com/2018/05/27/动态规划/index.html">
 <meta property="og:site_name" content="Iris&#39;s Blog">
-<meta property="og:description" content="¶动态规划算法的基本要素：  最优子结构：问题的最优解包含子问题的最优解。 重叠子问题：递归求解时，子问题被重复计算多次。  ¶分治与动态规划的区别：  分治是自顶向下求解，求n的最优解时，并不能立即确定最优解，所以并不是只求n/2的最优解（二分思想）就行了，需要做许多子弟向上尝试，而每一次尝试都需要进行一次递归，导致规模较小的子问题多次重复计算。 动态规划是自底向上求解，将所有子问题的解都记下来">
+<meta property="og:description" content="¶动态规划算法的基本要素：  最优子结构：问题的最优解包含子问题的最优解。 重叠子问题：递归求解时，子问题被重复计算多次。">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="http://yoursite.com/img/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%921.png">
 <meta property="og:image" content="http://yoursite.com/img/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%922.png">
@@ -23,10 +23,11 @@
 <meta property="og:image" content="http://yoursite.com/img/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%925.png">
 <meta property="og:image" content="http://yoursite.com/img/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%926.png">
 <meta property="og:image" content="http://yoursite.com/img/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%927.png">
-<meta property="og:updated_time" content="2018-05-30T15:47:49.834Z">
+<meta property="og:image" content="http://yoursite.com/img/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%928.png">
+<meta property="og:updated_time" content="2018-05-31T11:01:53.583Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="动态规划">
-<meta name="twitter:description" content="¶动态规划算法的基本要素：  最优子结构：问题的最优解包含子问题的最优解。 重叠子问题：递归求解时，子问题被重复计算多次。  ¶分治与动态规划的区别：  分治是自顶向下求解，求n的最优解时，并不能立即确定最优解，所以并不是只求n/2的最优解（二分思想）就行了，需要做许多子弟向上尝试，而每一次尝试都需要进行一次递归，导致规模较小的子问题多次重复计算。 动态规划是自底向上求解，将所有子问题的解都记下来">
+<meta name="twitter:description" content="¶动态规划算法的基本要素：  最优子结构：问题的最优解包含子问题的最优解。 重叠子问题：递归求解时，子问题被重复计算多次。">
 <meta name="twitter:image" content="http://yoursite.com/img/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%921.png">
   
     <link rel="alternative" href="/atom.xml" title="Iris&#39;s Blog" type="application/atom+xml">
@@ -168,7 +169,7 @@
         <h5 id="动态规划算法的基本要素："><a class="header-anchor" href="#动态规划算法的基本要素：">¶</a>动态规划算法的基本要素：</h5>
 <ul>
 <li>最优子结构：问题的最优解包含子问题的最优解。</li>
-<li>重叠子问题：递归求解时，子问题被重复计算多次。</li>
+<li>重叠子问题：递归求解时，子问题被重复计算多次。<a id="more"></a></li>
 </ul>
 <h5 id="分治与动态规划的区别："><a class="header-anchor" href="#分治与动态规划的区别：">¶</a>分治与动态规划的区别：</h5>
 <ul>
@@ -267,6 +268,18 @@
 <li>
 <p>构造最优解：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">traceback</span><span class="params">(<span class="keyword">int</span>[][] m, <span class="keyword">int</span>[] w, <span class="keyword">int</span> c, <span class="keyword">int</span>[] x)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n = w.length - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;n;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(m[i][c] == m[i+<span class="number">1</span>][c]) x[i] = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">else</span>&#123;</span><br><span class="line">            x[i] = <span class="number">1</span>;</span><br><span class="line">            c -= w[i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    x[n] = (m[n][c]&gt;<span class="number">0</span>)?<span class="number">1</span>:<span class="number">0</span>;  <span class="comment">//第n个若重量小于c则一定被放入？？</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h5 id="最优二叉搜索树："><a class="header-anchor" href="#最优二叉搜索树：">¶</a>最优二叉搜索树：</h5>
+<p>给定n个互异的关键字组成的序列K=&lt;k<sub>1</sub>,k<sub>2</sub>,…k<sub>n</sub>&gt;，且关键字有序，要从这些关键字中构造一颗二叉查找树。对每个关键字k<sub>i</sub>，一次搜索搜索到的概率为p<sub>i</sub>。可能有一些搜索的值不再k内，因此还有n+1个“虚拟键”d<sub>0</sub>,d<sub>1</sub>,…d<sub>n</sub>，代表不在k内的值。</p>
+<ul>
+<li>
+<p>递归结构：</p>
+<p><img src="/img/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%928.png" alt="动态规划8"></p>
+</li>
+<li>
+<p>计算最优解：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">obst</span><span class="params">(<span class="keyword">float</span>[] a, <span class="keyword">float</span>[] b, <span class="keyword">float</span>[][] m, <span class="keyword">int</span>[][] s, <span class="keyword">float</span>[][] w)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> n = a.length -<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=n;i++)&#123;</span><br><span class="line">        w[i+<span class="number">1</span>][i] = a[i];</span><br><span class="line">        m[i+<span class="number">1</span>][i] = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> r=<span class="number">0</span>;r&lt;n;r++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=n-<span class="number">1</span>;i++)&#123;</span><br><span class="line">            <span class="keyword">int</span> j = i+r;</span><br><span class="line">            w[i][j] = w[i][j-<span class="number">1</span>]+a[j]+b[j];</span><br><span class="line">            m[i][j] = m[i+<span class="number">1</span>][j];</span><br><span class="line">            s[i][j] = i;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> k=i+<span class="number">1</span>;k&lt;=j;k++)&#123;</span><br><span class="line">                <span class="keyword">float</span> t = m[i][k-<span class="number">1</span>]+m[k+<span class="number">1</span>][j];</span><br><span class="line">                <span class="keyword">if</span>(t&lt;m[i][j])&#123;</span><br><span class="line">                    m[i][j] = t;</span><br><span class="line">                    s[i][j] = k;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            m[i][j] += w[i][j];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>​</p>
 </li>
 </ul>
@@ -473,15 +486,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -493,6 +502,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vim</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">以太坊</a>
               </li>
              
@@ -501,7 +514,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vim</a>
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
               </li>
             
             <div class="clearfix"></div>
