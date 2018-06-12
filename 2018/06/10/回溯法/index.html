@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Iris&#39;s Blog">
 <meta property="og:description" content="回溯法在问题的解空间树中，按深度优先策略，从根节点出发搜索空间树。算法搜索至解空间的任一节点时，先判断该节点是否包含问题的解。如果肯定不包含，则跳过对以该节点为根的子树的搜索，逐层向其祖先节点回溯；否则，进入该子树，继续按深度优先策略搜索。   回溯框架：（深度优先遍历思想） 递归回溯： 123456789void backtrack(int t)&amp;#123;   //t表示递归深度    if(">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-06-11T03:00:10.955Z">
+<meta property="og:updated_time" content="2018-06-12T15:01:00.928Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="回溯法">
 <meta name="twitter:description" content="回溯法在问题的解空间树中，按深度优先策略，从根节点出发搜索空间树。算法搜索至解空间的任一节点时，先判断该节点是否包含问题的解。如果肯定不包含，则跳过对以该节点为根的子树的搜索，逐层向其祖先节点回溯；否则，进入该子树，继续按深度优先策略搜索。   回溯框架：（深度优先遍历思想） 递归回溯： 123456789void backtrack(int t)&amp;#123;   //t表示递归深度    if(">
@@ -165,6 +165,12 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">backtrack</span><span class="params">(<span class="keyword">int</span> t)</span></span>&#123;   <span class="comment">//t表示递归深度</span></span><br><span class="line">    <span class="keyword">if</span>(t &gt; n) output(x);   <span class="comment">//已到叶节点</span></span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=f(n,t);i&lt;=g(n,t);i++)&#123; <span class="comment">//遍历当前节点的所有子节点</span></span><br><span class="line">            x[t] = h(i);   <span class="comment">//x[]表示当前搜索的路径</span></span><br><span class="line">            <span class="keyword">if</span>(constraint(t) &amp;&amp; bound(t)) backtrack(t+<span class="number">1</span>);  <span class="comment">//当前节点满足限制条件，继续深搜</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>迭代回溯：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">iteractiveBackTrack</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> t = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(t&gt;<span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">if</span>(f(n,t)&lt;=g(n,t))&#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=f(n,t);i&lt;=g(n,t);i++)&#123;</span><br><span class="line">                x[t] = h(i);</span><br><span class="line">                <span class="keyword">if</span>(condtraint(t) &amp;&amp; bound(t))&#123;</span><br><span class="line">                    <span class="keyword">if</span>(solution(t)) output(x);</span><br><span class="line">                    <span class="keyword">else</span> t++;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> t--;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>两棵典型的解空间树----子集树、排列树：</p>
+<p>子集树：所给问题是从n个元素的集合S中找出S满足某种性质的子集。例如：n个物品的0-1背包问题。一般是二叉树，分叉表示要不要当前元素。</p>
+<p>回溯法搜索子集树(递归方式)：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">backtrack</span><span class="params">(<span class="keyword">int</span> t)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(t&gt;n) output(x);</span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=n;i++)&#123;   <span class="comment">//二叉树最多2个子节点</span></span><br><span class="line">            x[t] = i;</span><br><span class="line">            <span class="keyword">if</span>(constraint(t) &amp;&amp; bound(t)) backtrack(t+<span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>​</p>
 </li>
 </ul>
@@ -371,15 +377,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">linux</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">git</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vim</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">以太坊</a>
+                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -387,11 +393,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">区块链</a>
+                <a href="javascript:void(0)" class="js-tag color4">vim</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">linux</a>
+                <a href="javascript:void(0)" class="js-tag color4">区块链</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -399,7 +405,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
+                <a href="javascript:void(0)" class="js-tag color4">以太坊</a>
               </li>
             
             <div class="clearfix"></div>
