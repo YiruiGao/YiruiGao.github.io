@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="Iris&#39;s Blog">
 <meta property="og:description" content="回溯法在问题的解空间树中，按深度优先策略，从根节点出发搜索空间树。算法搜索至解空间的任一节点时，先判断该节点是否包含问题的解。如果肯定不包含，则跳过对以该节点为根的子树的搜索，逐层向其祖先节点回溯；否则，进入该子树，继续按深度优先策略搜索。   回溯框架：（深度优先遍历思想） 递归回溯： 123456789void backtrack(int t)&amp;#123;   //t表示递归深度    if(">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-06-13T15:20:52.853Z">
+<meta property="og:updated_time" content="2018-06-16T03:52:34.839Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="回溯法">
 <meta name="twitter:description" content="回溯法在问题的解空间树中，按深度优先策略，从根节点出发搜索空间树。算法搜索至解空间的任一节点时，先判断该节点是否包含问题的解。如果肯定不包含，则跳过对以该节点为根的子树的搜索，逐层向其祖先节点回溯；否则，进入该子树，继续按深度优先策略搜索。   回溯框架：（深度优先遍历思想） 递归回溯： 123456789void backtrack(int t)&amp;#123;   //t表示递归深度    if(">
@@ -174,7 +174,24 @@
 <p>​排列树：所给问题是确定n个元素满足某种性质的排列。</p>
 <p>回溯法搜索排列树(递归方式)：</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">backtrack</span><span class="params">(<span class="keyword">int</span> t)</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(t&gt;n) output(x);   <span class="comment">//t表示树的层数，也表示排列序列的第个位置</span></span><br><span class="line">    <span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=t;i&lt;=n;i++)&#123;   <span class="comment">//位置t上有n-t+1种选择</span></span><br><span class="line">            swap(x[t], x[i]);</span><br><span class="line">            <span class="keyword">if</span>(condtraint(t) &amp;&amp; bound(t)) backtrack(t+<span class="number">1</span>);</span><br><span class="line">            swap(x[t], x[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>​</p>
+</li>
+</ul>
+<h5 id="n后问题：-子集树"><a class="header-anchor" href="#n后问题：-子集树">¶</a>n后问题： —子集树</h5>
+<p>在n*n格的棋盘上放置n个皇后，任何两个后都不在同一行或同一列或同斜行。</p>
+<ul>
+<li>
+<p>算法设计：用n元组x[1:n]表示n后问题的解，x[i]表示皇后i放在第i行第x[i]列。</p>
+</li>
+<li>
+<p>剪枝条件：若2个后的位置分别是(i,j)和(k,l)，则要x[i]!=x[k](不在同一列)，|i-k|!=|j-l|(不在同一斜线)。</p>
+</li>
+<li>
+<p>递归方式回溯：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NQueen</span></span>&#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">int</span> n;   <span class="comment">//皇后个数</span></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">int</span>[] x;  <span class="comment">//当前解</span></span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">long</span> sum;   <span class="comment">//当前已找到的可行方案数</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">long</span> <span class="title">nQueen</span><span class="params">(<span class="keyword">int</span> nn)</span></span>&#123;</span><br><span class="line">        n=nn; sum=<span class="number">0</span>; x=<span class="keyword">new</span> <span class="keyword">int</span>[n+<span class="number">1</span>];</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;=n;i++) x[i] = <span class="number">0</span>;   <span class="comment">//第0列没有意义</span></span><br><span class="line">        backtrack(<span class="number">1</span>);</span><br><span class="line">        <span class="keyword">return</span> sum;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">boolean</span> <span class="title">place</span><span class="params">(<span class="keyword">int</span> i)</span></span>&#123;  <span class="comment">//剪枝函数</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">1</span>;j&lt;k;j++)&#123;</span><br><span class="line">            <span class="keyword">if</span>((Math.abs(k-j) == Math.abs(x[k]-x[j])) || (x[j] == x[k])) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">backtrack</span><span class="params">(<span class="keyword">int</span> t)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(t&gt;n) sum++;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">1</span>;i&lt;=n;i++)&#123; <span class="comment">//每个皇后都有N个可选的列</span></span><br><span class="line">                x[t] = i;</span><br><span class="line">                <span class="keyword">if</span>(place(t)) backtrack(t+<span class="number">1</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>迭代方式回溯：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//节省O(n)递推空间，只对backtrack函数作了变动</span></span><br><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">backtrack</span><span class="params">()</span></span>&#123;</span><br><span class="line">    x[<span class="number">1</span>] = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> k = <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(k&gt;<span class="number">0</span>)&#123;</span><br><span class="line">        x[k] += <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>((x[k]&lt;=n) &amp;&amp; !place(k)) x[k] += <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">if</span>(x[k] &lt;= n)&#123;</span><br><span class="line">            <span class="keyword">if</span>(k == n) sum++;</span><br><span class="line">            <span class="keyword">else</span>&#123;</span><br><span class="line">                k++;</span><br><span class="line">                x[k] = <span class="number">0</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> k--;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>​</p>
 </li>
 </ul>
@@ -381,19 +398,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">linux</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vim</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -401,7 +406,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">以太坊</a>
+                <a href="javascript:void(0)" class="js-tag color4">vim</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -410,6 +423,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">算法</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">以太坊</a>
               </li>
             
             <div class="clearfix"></div>
